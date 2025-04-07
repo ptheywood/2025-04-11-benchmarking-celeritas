@@ -1,0 +1,1 @@
+- waimea.jpg -  photograph by Peter Heywood

@@ -1,0 +1,1 @@
+`celeritas-square.svg` - https://github.com/celeritas-project/celeritas/blob/43af187b2b44aeb1d43821554832de9204588e6d/doc/_static/celeritas-square.svg Apache-2 / MIT.

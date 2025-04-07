@@ -1,8 +1,8 @@
 ---
 title: "Benchmarking Celeritas"
-author: 
+author:
   - "Peter Heywood, Research Software Engineer"
-institute: 
+institute:
   - "The University of Sheffield"
 date: "2025-04-11"
 logo: ./img/UOSLogo_Primary_Violet_RGB.svg
@@ -12,7 +12,7 @@ format:
   revealjs:
     theme: theme/tuos.scss
     embed-resources: false  # only enable when publish-ready for perf reasons
-    template-partials: 
+    template-partials:
       - title-slide.html
     # show-notes: separate-page
     slide-number: c
@@ -26,7 +26,7 @@ format:
     navigation-mode: linear
     controls: true
     mouse-wheel: true
-    include-after-body: 
+    include-after-body:
       - text: |
           <script type="text/javascript">
           Reveal.addEventListener('slidechanged', (event) => {
@@ -42,27 +42,41 @@ title-slide-attributes:
 
 ---
 
-# Benchmarking Celeritas {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+# Celeritas {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
 
 <!-- Only 20 mins. -->
 
 ## Celeritas
 
-::: {.callout-important}
 
-@todo - info about celertias
+::: {.celeritas-logo }
 
-:::
-
-## celertias-project/regression
-
-::: {.callout-important}
-
-@todo - info about celertias-project/regression
-
-@todo - highlight intended as node-level benchmark 
+![](img/celeritas-project/celeritas-square.svg){style="max-width:20%; float: right;" fig-alt="Celeritas project Logo"}
 
 :::
+
+> The Celeritas project implements HEP detector physics on GPU accelerator hardware with the ultimate goal of supporting the massive computational requirements of the HL-LHC upgrade.
+
+- [github.com/celeritas-project/celeritas](https://github.com/celeritas-project/celeritas)
+
+- NVIDIA GPUs via [CUDA](https://developer.nvidia.com/cuda-toolkit)
+- AMD GPUs via [HIP](https://github.com/ROCm-Developer-Tools/HIP)
+
+## `celertias-project/regression`
+
+
+> a suite of test problems in Celeritas to track whether the code is able to run to completion without hitting an assertion, how the code input options (and processed output) change over time, and how the kernel occupancy requirements change in response to growing code complexity
+
+- [github.com/celeritas-project/regression](https://github.com/celeritas-project/regression)
+
+- Mainly designed as a node-level benchmark
+- CPU and GPU 
+- `geant4`, `celer-g4`, `celer-sim`
+- ~22 simulation inputs 
+  - 7 geometries
+  - with/without msc
+  - with/without field
+  - orange vs vecgeom
 
 ## celertias-project/regression
 
@@ -76,46 +90,71 @@ title-slide-attributes:
 # Hardware {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
 
 
-## Previously used hardware
+## Hardware
 
-::: {.callout-important}
 
-@todo - info about Perlmutter and Fronteir,
+| Machine                        | CPU                                 | GPU                   |
+|:-------------------------------|:------------------------------------|:----------------------|
+| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                    | 4x NVIDIA A100        |
+| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” CPU | 4x/8x AMD MI250x      |
 
-or a full table of 5 machines.
+## Hardware
 
-:::
+| Machine                        | CPU                                 | GPU                   |
+|:-------------------------------|:------------------------------------|:----------------------|
+| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                    | 4x NVIDIA A100        |
+| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” CPU | 4x/8x AMD MI250x      |
+| [JADE@ARC][jade-arc-specs]     | 2x AMD EPYC 9534                    | 8x AMD MI300x         |
+| [Bede GH200][bede-specs]       | Nvidia Grace                        | 1x Nvidia GH200 480GB |
+| Waimea (local)                 | Intel i7-5930k                      | 2x Nvidia RTX 3090    |
+
 
 ## JADE 2.5 / JADE @ ARC
 
-::: {.callout-important}
+- **J**oint **A**ceademic **D**ata science **E**ndeavour
+- UK Tier-2 technology pilot resource
+  - funded by EPSRC, owned and hosted by the University of Oxford
+- 3 Lenovo ThinkSystem SR685a V3 Nodes
+  - 2 AMD EPYC 9534 64-Core CPUs
+  - 8 AMD MI300X GPUs
 
-@todo - info about JADE 2.5 / JADE @ ARC
-
-:::
-
+![](img/oxford-arc/JADE_2.5_Logo.svg){fig-alt="JADE@ARC Logo"}
+![](img/oxford-arc/AMD-MI300X.png){fig-alt="AMD MI300x system image"}
 
 ## Bede GH200
 
-::: {.callout-important}
+- N8 CIR Bede
+- UK Tier-2 HPC resource
+  - Originally funded by EPSRC, hosted by Durham University
+  - Extended by N8 partners for 1 year
+- Grace-Hopper pilot
+  - 6x NVIDIA GH200 480GB nodes
+  - 72-core NVIDIA Grace ARM CPU
+  - 96GB Hopper GPU
+  - Host-device NVLink C2C 
+  
 
-@todo - info about Bede's GH200 node(s)
-
-:::
+![](img/n8-cir-bede/logo-cmyk.png){fig-alt="N8 CIR Bede Logo"}
 
 
 ## Waimea / 2x 3090 workstation
 
-::: {.callout-important}
+- Shared Workstation in the RSE group at the University of Sheffield
+- 1x Intel i7-5930k (6c 12t) @ 140W 
+- 2x NVIDIA RTX 5090 @ 370W
+  - Consumer Ampere `SM_86`
 
-@todo - info about Waimea / 3090 workstation
+::: {.callout-warning title="Not the ideal benchmark machine"}
+
+CPU released in 2014, GPUs from 2020
 
 :::
 
+![](img/ptheywood/waimea.jpg){fig-alt="Picture of Waimea during GPU upgrade" width=400}
 
 # Benchmarking {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
 
-## Running celeritas-project/regression
+## Running `celeritas-project/regression`
 
 ::: {.callout-important}
 
@@ -143,7 +182,7 @@ or a full table of 5 machines.
 
 ::: {.callout-important}
 
-@todo - Figure / table for some results / comparisons, depending on what plotting works nicely. 
+@todo - Figure / table for some results / comparisons, depending on what plotting works nicely.
 
 :::
 
@@ -152,7 +191,7 @@ or a full table of 5 machines.
 
 ::: {.callout-important}
 
-@todo - Figure / table for some results / comparisons, depending on what plotting works nicely. 
+@todo - Figure / table for some results / comparisons, depending on what plotting works nicely.
 
 :::
 
@@ -160,7 +199,7 @@ or a full table of 5 machines.
 
 ::: {.callout-important}
 
-@todo - Figure / table for some results / comparisons, depending on what plotting works nicely. 
+@todo - Figure / table for some results / comparisons, depending on what plotting works nicely.
 
 :::
 
@@ -168,7 +207,7 @@ or a full table of 5 machines.
 
 ::: {.callout-important}
 
-@todo - Figure / table for some results / comparisons, depending on what plotting works nicely. 
+@todo - Figure / table for some results / comparisons, depending on what plotting works nicely.
 
 :::
 
@@ -176,8 +215,11 @@ or a full table of 5 machines.
 
 ::: {.callout-important}
 
-@todo - lots of credit for celertias devs.
+@todo - lots of credit for celertias-project/regression devs.
 
+[@sethrj](https://github.com/sethrj) - Seth R. Johnson
+[@esseivaju](https://github.com/esseivaju) - Julien Esseiva
+[@amandalund](https://github.com/amandalund) - Amanda Lund
 :::
 
 # Additional Slides {.divider .coral visibility="uncounted" data-hide-slide-number='true'}
@@ -191,3 +233,8 @@ or a full table of 5 machines.
 [TBHGCal181Oct_fixdup.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EWFFpWCW4GpOhJgQfBaZTVkBjsjHke93QO7Em3TrK_GkFg
 [cms2026D110DD4hep_fix.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EfTefx_Me71Gs37_h-nuaTQB_8lqNsCMSz9kNmQOpEl2sA
 [LHCb_Upgrade_onlyECALandHCAL.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EWdDg95YWNNOuznQ9DnrfMUBmQrT9Akp2ixUPBuhGIdQww
+
+[perlmutter-specs]: https://docs.nersc.gov/systems/perlmutter/architecture/
+[frontier-specs]: https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes
+[bede-specs]: https://bede-documentation.readthedocs.io/en/latest/hardware/index.html
+[jade-arc-specs]: https://jade-arc-docs.readthedocs.io/
