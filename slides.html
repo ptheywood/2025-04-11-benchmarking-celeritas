@@ -340,42 +340,42 @@
 </div>
 </section>
 <section>
-<section id="benchmarking-celeritas" class="title-slide slide level1 divider teal center" data-visibility="uncounted" data-hide-slide-number="true">
-<h1>Benchmarking Celeritas</h1>
+<section id="celeritas" class="title-slide slide level1 divider teal center" data-visibility="uncounted" data-hide-slide-number="true">
+<h1>Celeritas</h1>
 <!-- Only 20 mins. -->
 </section>
-<section id="celeritas" class="slide level2">
+<section id="celeritas-1" class="slide level2">
 <h2>Celeritas</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="celeritas-logo">
+<p><img data-src="img/celeritas-project/celeritas-square.svg" style="max-width:20%; float: right;" alt="Celeritas project Logo"></p>
 </div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> - info about celertias</p>
-</div>
-</div>
-</div>
+<blockquote>
+<p>The Celeritas project implements HEP detector physics on GPU accelerator hardware with the ultimate goal of supporting the massive computational requirements of the HL-LHC upgrade.</p>
+</blockquote>
+<ul>
+<li><p><a href="https://github.com/celeritas-project/celeritas">github.com/celeritas-project/celeritas</a></p></li>
+<li><p>NVIDIA GPUs via <a href="https://developer.nvidia.com/cuda-toolkit">CUDA</a></p></li>
+<li><p>AMD GPUs via <a href="https://github.com/ROCm-Developer-Tools/HIP">HIP</a></p></li>
+</ul>
 </section>
 <section id="celertias-projectregression" class="slide level2">
-<h2>celertias-project/regression</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> - info about celertias-project/regression</p>
-<p><span class="citation" data-cites="todo">@todo</span> - highlight intended as node-level benchmark</p>
-</div>
-</div>
-</div>
+<h2><code>celertias-project/regression</code></h2>
+<blockquote>
+<p>a suite of test problems in Celeritas to track whether the code is able to run to completion without hitting an assertion, how the code input options (and processed output) change over time, and how the kernel occupancy requirements change in response to growing code complexity</p>
+</blockquote>
+<ul>
+<li><p><a href="https://github.com/celeritas-project/regression">github.com/celeritas-project/regression</a></p></li>
+<li><p>Mainly designed as a node-level benchmark</p></li>
+<li><p>CPU and GPU</p></li>
+<li><p><code>geant4</code>, <code>celer-g4</code>, <code>celer-sim</code></p></li>
+<li><p>~22 simulation inputs</p>
+<ul>
+<li>7 geometries</li>
+<li>with/without msc</li>
+<li>with/without field</li>
+<li>orange vs vecgeom</li>
+</ul></li>
+</ul>
 </section>
 <section id="celertias-projectregression-1" class="slide level2">
 <h2>celertias-project/regression</h2>
@@ -398,70 +398,130 @@
 <h1>Hardware</h1>
 
 </section>
-<section id="previously-used-hardware" class="slide level2">
-<h2>Previously used hardware</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> - info about Perlmutter and Fronteir,</p>
-<p>or a full table of 5 machines.</p>
-</div>
-</div>
-</div>
+<section id="hardware-1" class="slide level2">
+<h2>Hardware</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Machine</th>
+<th style="text-align: left;">CPU</th>
+<th style="text-align: left;">GPU</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://docs.nersc.gov/systems/perlmutter/architecture/">Perlmutter</a></td>
+<td style="text-align: left;">1x AMD EPYC 7763</td>
+<td style="text-align: left;">4x NVIDIA A100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes">Frontier</a></td>
+<td style="text-align: left;">1x AMD “Optimized 3rd Gen EPYC” CPU</td>
+<td style="text-align: left;">4x/8x AMD MI250x</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="hardware-2" class="slide level2">
+<h2>Hardware</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Machine</th>
+<th style="text-align: left;">CPU</th>
+<th style="text-align: left;">GPU</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://docs.nersc.gov/systems/perlmutter/architecture/">Perlmutter</a></td>
+<td style="text-align: left;">1x AMD EPYC 7763</td>
+<td style="text-align: left;">4x NVIDIA A100</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes">Frontier</a></td>
+<td style="text-align: left;">1x AMD “Optimized 3rd Gen EPYC” CPU</td>
+<td style="text-align: left;">4x/8x AMD MI250x</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://jade-arc-docs.readthedocs.io/">JADE@ARC</a></td>
+<td style="text-align: left;">2x AMD EPYC 9534</td>
+<td style="text-align: left;">8x AMD MI300x</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://bede-documentation.readthedocs.io/en/latest/hardware/index.html">Bede GH200</a></td>
+<td style="text-align: left;">Nvidia Grace</td>
+<td style="text-align: left;">1x Nvidia GH200 480GB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Waimea (local)</td>
+<td style="text-align: left;">Intel i7-5930k</td>
+<td style="text-align: left;">2x Nvidia RTX 3090</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="jade-2.5-jade-arc" class="slide level2">
 <h2>JADE 2.5 / JADE @ ARC</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> - info about JADE 2.5 / JADE @ ARC</p>
-</div>
-</div>
-</div>
+<ul>
+<li><strong>J</strong>oint <strong>A</strong>ceademic <strong>D</strong>ata science <strong>E</strong>ndeavour</li>
+<li>UK Tier-2 technology pilot resource
+<ul>
+<li>funded by EPSRC, owned and hosted by the University of Oxford</li>
+</ul></li>
+<li>3 Lenovo ThinkSystem SR685a V3 Nodes
+<ul>
+<li>2 AMD EPYC 9534 64-Core CPUs</li>
+<li>8 AMD MI300X GPUs</li>
+</ul></li>
+</ul>
+<p><img data-src="img/oxford-arc/JADE_2.5_Logo.svg" alt="JADE@ARC Logo"> <img data-src="img/oxford-arc/AMD-MI300X.png" alt="AMD MI300x system image"></p>
 </section>
 <section id="bede-gh200" class="slide level2">
 <h2>Bede GH200</h2>
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Important</strong></p>
-</div>
-<div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> - info about Bede’s GH200 node(s)</p>
-</div>
-</div>
-</div>
+<ul>
+<li>N8 CIR Bede</li>
+<li>UK Tier-2 HPC resource
+<ul>
+<li>Originally funded by EPSRC, hosted by Durham University</li>
+<li>Extended by N8 partners for 1 year</li>
+</ul></li>
+<li>Grace-Hopper pilot
+<ul>
+<li>6x NVIDIA GH200 480GB nodes</li>
+<li>72-core NVIDIA Grace ARM CPU</li>
+<li>96GB Hopper GPU</li>
+<li>Host-device NVLink C2C</li>
+</ul></li>
+</ul>
+<p><img data-src="img/n8-cir-bede/logo-cmyk.png" alt="N8 CIR Bede Logo"></p>
 </section>
 <section id="waimea-2x-3090-workstation" class="slide level2">
 <h2>Waimea / 2x 3090 workstation</h2>
-<div class="callout callout-important callout-titled callout-style-default">
+<ul>
+<li>Shared Workstation in the RSE group at the University of Sheffield</li>
+<li>1x Intel i7-5930k (6c 12t) @ 140W</li>
+<li>2x NVIDIA RTX 5090 @ 370W
+<ul>
+<li>Consumer Ampere <code>SM_86</code></li>
+</ul></li>
+</ul>
+<div title="Not the ideal benchmark machine">
+<div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Important</strong></p>
+<p><strong>Not the ideal benchmark machine</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> - info about Waimea / 3090 workstation</p>
+<p>CPU released in 2014, GPUs from 2020</p>
 </div>
 </div>
 </div>
+</div>
+<p><img data-src="img/ptheywood/waimea.jpg" alt="Picture of Waimea during GPU upgrade" width="400"></p>
 </section></section>
 <section>
 <section id="benchmarking" class="title-slide slide level1 divider teal center" data-visibility="uncounted" data-hide-slide-number="true">
@@ -469,7 +529,7 @@
 
 </section>
 <section id="running-celeritas-projectregression" class="slide level2">
-<h2>Running celeritas-project/regression</h2>
+<h2>Running <code>celeritas-project/regression</code></h2>
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -582,7 +642,8 @@
 <p><strong>Important</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> - lots of credit for celertias devs.</p>
+<p><span class="citation" data-cites="todo">@todo</span> - lots of credit for celertias-project/regression devs.</p>
+<p><a href="https://github.com/sethrj"><span class="citation" data-cites="sethrj">@sethrj</span></a> - Seth R. Johnson <a href="https://github.com/esseivaju"><span class="citation" data-cites="esseivaju">@esseivaju</span></a> - Julien Esseiva <a href="https://github.com/amandalund"><span class="citation" data-cites="amandalund">@amandalund</span></a> - Amanda Lund</p>
 </div>
 </div>
 </div>
