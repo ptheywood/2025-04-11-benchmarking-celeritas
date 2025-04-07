@@ -1,0 +1,193 @@
+---
+title: "Benchmarking Celeritas"
+author: 
+  - "Peter Heywood, Research Software Engineer"
+institute: 
+  - "The University of Sheffield"
+date: "2025-04-11"
+logo: ./img/UOSLogo_Primary_Violet_RGB.svg
+footer: "Benchmarking Celeritas - [GridPP53 & SWIFT-HEP09](https://indico.cern.ch/event/1476120/)"
+
+format:
+  revealjs:
+    theme: theme/tuos.scss
+    embed-resources: false  # only enable when publish-ready for perf reasons
+    template-partials: 
+      - title-slide.html
+    # show-notes: separate-page
+    slide-number: c
+    width: 1050
+    height: 700
+    margin: 0.1
+    min-scale: 0.2
+    max-scale: 2.0
+    auto-stretch: false
+    fontsize: 32px
+    navigation-mode: linear
+    controls: true
+    mouse-wheel: true
+    include-after-body: 
+      - text: |
+          <script type="text/javascript">
+          Reveal.addEventListener('slidechanged', (event) => {
+            const isSnOn = (event.currentSlide.dataset.hideSlideNumber !== 'true');
+            Reveal.configure({ slideNumber: isSnOn ? "c" : isSnOn});
+          });
+          </script>
+
+# title slide background
+title-slide-attributes:
+  data-background-color: "#9ADBE8" # $tuos-powder-blue
+  # data-background-color: "#D7F1F6" # $tuos-powder-blue-40
+
+---
+
+# Benchmarking Celeritas {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+
+<!-- Only 20 mins. -->
+
+## Celeritas
+
+::: {.callout-important}
+
+@todo - info about celertias
+
+:::
+
+## celertias-project/regression
+
+::: {.callout-important}
+
+@todo - info about celertias-project/regression
+
+@todo - highlight intended as node-level benchmark 
+
+:::
+
+## celertias-project/regression
+
+::: {.callout-important}
+
+@todo - celeritas-project/regression more info / sample results
+
+:::
+
+
+# Hardware {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+
+
+## Previously used hardware
+
+::: {.callout-important}
+
+@todo - info about Perlmutter and Fronteir,
+
+or a full table of 5 machines.
+
+:::
+
+## JADE 2.5 / JADE @ ARC
+
+::: {.callout-important}
+
+@todo - info about JADE 2.5 / JADE @ ARC
+
+:::
+
+
+## Bede GH200
+
+::: {.callout-important}
+
+@todo - info about Bede's GH200 node(s)
+
+:::
+
+
+## Waimea / 2x 3090 workstation
+
+::: {.callout-important}
+
+@todo - info about Waimea / 3090 workstation
+
+:::
+
+
+# Benchmarking {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+
+## Running celeritas-project/regression
+
+::: {.callout-important}
+
+@todo - Info about how to run / changes required / example?
+
+@todo - maybe just fold into the results segment?
+
+:::
+
+## Combinations executed / issues encountered.
+
+::: {.callout-important}
+
+@todo - Info about what I ran. 3090 orange only, JADE orange only. BEde both but with some caveats.
+
+@todo - maybe just fold into the results segment?
+
+:::
+
+
+# Results {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+
+
+## Results 1 @todo
+
+::: {.callout-important}
+
+@todo - Figure / table for some results / comparisons, depending on what plotting works nicely. 
+
+:::
+
+
+## Results 2 @todo
+
+::: {.callout-important}
+
+@todo - Figure / table for some results / comparisons, depending on what plotting works nicely. 
+
+:::
+
+## Results 3 @todo
+
+::: {.callout-important}
+
+@todo - Figure / table for some results / comparisons, depending on what plotting works nicely. 
+
+:::
+
+## Results 3 @todo
+
+::: {.callout-important}
+
+@todo - Figure / table for some results / comparisons, depending on what plotting works nicely. 
+
+:::
+
+# Thank you {.divider .flamingo visibility="uncounted" data-hide-slide-number='true'}
+
+::: {.callout-important}
+
+@todo - lots of credit for celertias devs.
+
+:::
+
+# Additional Slides {.divider .coral visibility="uncounted" data-hide-slide-number='true'}
+
+
+<!-- Reference links -->
+[bessemer-gpu-specs]: https://docs.hpc.shef.ac.uk/en/latest/bessemer/cluster_specs.html#gpu-node-specifications
+[stanage-gpu-specs]: https://docs.hpc.shef.ac.uk/en/latest/stanage/cluster_specs.html#gpu-nodes
+[bede-gpu-specs]: https://bede-documentation.readthedocs.io/en/latest/hardware/index.html
+[trackML.gdml]: https://gitlab.cern.ch/VecGeom/VecGeom/-/blob/master/test/gdml/gdmls/trackML.gdml?ref_type=heads
+[TBHGCal181Oct_fixdup.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EWFFpWCW4GpOhJgQfBaZTVkBjsjHke93QO7Em3TrK_GkFg
+[cms2026D110DD4hep_fix.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EfTefx_Me71Gs37_h-nuaTQB_8lqNsCMSz9kNmQOpEl2sA
+[LHCb_Upgrade_onlyECALandHCAL.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EWdDg95YWNNOuznQ9DnrfMUBmQrT9Akp2ixUPBuhGIdQww

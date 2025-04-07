@@ -1,6 +1,6 @@
 # 2025-04-11 Benchmarking Celeritas
 
-Slides for talk on 2025-04-11 as part of [GridPP53 & SWFIT-HEP09](https://indico.cern.ch/event/1476120/).
+Slides for talk on 2025-04-11 as part of [GridPP53 & SWIFT-HEP09](https://indico.cern.ch/event/1476120/).
 
 [🔗 Hosted slides via GitHub Actions](https://ptheywood.uk/2025-04-11-benchmarking-celertias)
 
