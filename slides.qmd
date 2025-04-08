@@ -163,35 +163,10 @@ include-in-header:
 
 ## Hardware (Upstream)
 
-<style type="text/css">
-/* Set the tr background colour to red or green for nv / amd */
-table.trbg-nv-amd tbody tr:nth-child(1),
-table.trbg-nv-amd tbody tr:nth-child(3) {
-    /* background: #BC5544; */
-    background:rgba(188, 84, 68, 0.45);
-}
-table.trbg-nv-amd tbody tr:nth-child(2),
-table.trbg-nv-amd tbody tr:nth-child(4),
-table.trbg-nv-amd tbody tr:nth-child(5) {
-    /* background: #7A954F; */
-    background:rgba(122, 149, 79, 0.45);
-}
-table.trbg-nv-amd tbody a {
-  color: var(--tuos-midnight-black);
-}
-
-/* shade out 2 rows of the table when requested */
-table.shade-r1-r2 tbody tr:first-child,
-table.shade-r1-r2 tbody tr:nth-child(2) {
-    opacity: 0.3;
-}
-</style>
-
-
-| Machine                        | CPU                             | GPU                   |
-|:-------------------------------|:--------------------------------|:----------------------|
-| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
-| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
+| Machine                        | CPU                             | GPU            |
+| :----------------------------- | :------------------------------ | :------------- |
+| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x  |
+| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
 
 : {.trbg-nv-amd .table-full-width tbl-colwidths="[20,47,33]"}
 
@@ -199,14 +174,39 @@ table.shade-r1-r2 tbody tr:nth-child(2) {
 ## Hardware
 
 | Machine                        | CPU                             | GPU                   |
-|:-------------------------------|:--------------------------------|:----------------------|
+| :----------------------------- | :------------------------------ | :-------------------- |
 | [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
 | [JADE@ARC][jade-arc-specs]     | 2x AMD EPYC 9534                | 8x AMD MI300x         |
 | [Bede GH200][bede-specs]       | 1x Nvidia Grace                 | 1x Nvidia GH200 480GB |
 | 3090 (TUoS)                    | 1x Intel i7-5930k               | 2x Nvidia RTX 3090    |
 
-: {.trbg-nv-amd .table-full-width tbl-colwidths="[20,47,33]" .shade-r1-r2}
+: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[20,47,33]" }
+
+
+<!-- with footnotes instead, but this does not "print" propperlly -->
+
+<!-- ## Hardware (Upstream)
+
+| Machine                                                                                        | CPU                             | GPU            |
+| :--------------------------------------------------------------------------------------------- | :------------------------------ | :------------- |
+| Frontier ^[https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes] | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x  |
+| Perlmutter ^[https://docs.nersc.gov/systems/perlmutter/architecture/]                          | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
+
+: {.trbg-nv-amd .table-full-width tbl-colwidths="[20,47,33]"} -->
+
+
+<!-- ## Hardware
+
+| Machine                                                                                        | CPU                             | GPU                   |
+| :--------------------------------------------------------------------------------------------- | :------------------------------ | :-------------------- |
+| Frontier ^[https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes] | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
+| Perlmutter ^[https://docs.nersc.gov/systems/perlmutter/architecture/]                          | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
+| JADE@ARC ^[https://jade-arc-docs.readthedocs.io/]                                              | 2x AMD EPYC 9534                | 8x AMD MI300x         |
+| Bede GH200 ^[https://bede-documentation.readthedocs.io/en/latest/hardware/]                    | 1x Nvidia Grace                 | 1x Nvidia GH200 480GB |
+| 3090 (TUoS)                                                                                    | 1x Intel i7-5930k               | 2x Nvidia RTX 3090    |
+
+: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[20,47,33]" } -->
 
 
 ## JADE 2.5 / JADE@ARC
@@ -356,14 +356,23 @@ table.shade-r1-r2 tbody tr:nth-child(2) {
 
 # Thank you {.divider .dark-violet visibility="uncounted" data-hide-slide-number='true'}
 
+:::: {.columns}
+::: {.column width=25%}
+:::
+::: {.column width=50%}
+
+
 ::: {.callout-important title="@todo"}
 
-- lots of credit for celeritas-project/regression devs.
+lots of credit for `celeritas-project/regression` devs.
 
-[@sethrj](https://github.com/sethrj) - Seth R. Johnson
-[@esseivaju](https://github.com/esseivaju) - Julien Esseiva
-[@amandalund](https://github.com/amandalund) - Amanda Lund
+- [@sethrj](https://github.com/sethrj) - Seth R. Johnson
+- [@esseivaju](https://github.com/esseivaju) - Julien Esseiva
+- [@amandalund](https://github.com/amandalund) - Amanda Lund
 :::
+
+:::
+::::
 
 # Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'}
 

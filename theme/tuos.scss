@@ -487,6 +487,28 @@ $callout-color-caution: $tuos-peach;
             font-family: $tuos-font-family-serif;
         }
     }
+
+    /* Set the tr background colour to red or green for nv / amd */
+    table.trbg-nv-amd tbody tr:nth-child(1),
+    table.trbg-nv-amd tbody tr:nth-child(3) {
+        /* background: #BC5544; */
+        background:rgba(188, 84, 68, 0.45);
+    }
+    table.trbg-nv-amd tbody tr:nth-child(2),
+    table.trbg-nv-amd tbody tr:nth-child(4),
+    table.trbg-nv-amd tbody tr:nth-child(5) {
+        /* background: #7A954F; */
+        background:rgba(122, 149, 79, 0.45);
+    }
+    table.trbg-nv-amd tbody a {
+    color: var(--tuos-midnight-black);
+    }
+
+    /* shade out 2 rows of the table when requested */
+    table.shade-r1-r2 tbody tr:first-child,
+    table.shade-r1-r2 tbody tr:nth-child(2) {
+        opacity: 0.3;
+    }
 }
 .reveal.has-dark-background .footer {
     a {
