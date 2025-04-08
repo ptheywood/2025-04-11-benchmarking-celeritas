@@ -514,7 +514,7 @@ Finish this slide?
 :::
 ::: {.column .smaller width=44%}
 
-::: {.callout-tip title="Acknowledgements"}
+::: {.callout-note title="Acknowledgements"}
 - [`celeritas-project/celeritas`](https://github.com/celeritas-project/celeritas/graphs/contributors) developers
 - [`celeritas-project/regression`](https://github.com/celeritas-project/regression/graphs/contributors) developers
   - Seth R. Johnson [@sethrj](https://github.com/sethrj)
