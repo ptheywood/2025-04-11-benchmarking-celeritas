@@ -1,0 +1,2 @@
+- core-template backgrounds: https://brand.sheffield.ac.uk/guidelines/guide/fc2a02b9-c151-42ec-8597-103f4a85e94a/page/8792ecce-7005-4d59-b345-bc866ecdd347
+- Logos: https://brand.sheffield.ac.uk/guidelines/guide/633ac0dd-9e77-42dc-b9cd-2370913f638a/page/c2ce5af4-d490-4908-93be-b5d3c9368f2e

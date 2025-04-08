@@ -472,6 +472,13 @@ $callout-color-caution: $tuos-peach;
     .slide.level1 div.callout.callout-warning {
         border-color: $callout-color-warning;
     }
+
+    .section-header {
+        h1 {
+            color: $tuos-brand-violet;
+            font-family: $tuos-font-family-serif;
+        }
+    }
 }
 .reveal.has-dark-background .footer {
     a {
