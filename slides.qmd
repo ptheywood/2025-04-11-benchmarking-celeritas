@@ -53,39 +53,101 @@ include-in-header:
 
 # Celeritas {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
 
+::: {.callout-important appearance="simple"}
+@todo in-slide image attribution
+:::
+
+
 <!-- Only 20 mins. -->
 
 ## Celeritas
 
-
-::: {.celeritas-logo }
-
-![](img/celeritas-project/celeritas-square.svg){style="max-width:20%; float: right;" fig-alt="Celeritas project Logo"}
-
-:::
+:::: {.columns .smaller}
+::: {.column width=80%}
 
 > The Celeritas project implements HEP detector physics on GPU accelerator hardware with the ultimate goal of supporting the massive computational requirements of the HL-LHC upgrade.
 
-- [github.com/celeritas-project/celeritas](https://github.com/celeritas-project/celeritas)
+:::
+::: {.column .text-center width=20%}
 
+![](img/celeritas-project/celeritas-square.svg){fig-alt="Celeritas project Logo"}
+
+:::
+::::
+
+:::: {.columns .smaller}
+::: {.column width=50%}
+
+- [github.com/celeritas-project/celeritas](https://github.com/celeritas-project/celeritas)
 - NVIDIA GPUs via [CUDA](https://developer.nvidia.com/cuda-toolkit)
 - AMD GPUs via [HIP](https://github.com/ROCm-Developer-Tools/HIP)
 
-## `celertias-project/regression`
+:::
+::: {.column width=50%}
 
 
-> a suite of test problems in Celeritas to track whether the code is able to run to completion without hitting an assertion, how the code input options (and processed output) change over time, and how the kernel occupancy requirements change in response to growing code complexity
+::: {.callout-note title="More Information"}
+"Accelerating detector simulations with Celeritas: performance improvements and new capabilities"
 
-- [github.com/celeritas-project/regression](https://github.com/celeritas-project/regression)
+- [CHEP 2024 presentation](https://indico.cern.ch/event/1338689/contributions/6015932/)
+- [arXiv:2503.17608](https://arxiv.org/abs/2503.17608)
 
-- Mainly designed as a node-level benchmark
+<!-- @misc{lund2025acceleratingdetectorsimulationsceleritas,
+      title={Accelerating detector simulations with Celeritas: profiling and performance optimizations}, 
+      author={Amanda L. Lund and Julien Esseiva and Seth R. Johnson and Elliott Biondo and Philippe Canal and Thomas Evans and Hayden Hollenbeck and Soon Yung Jun and Guilherme Lima and Ben Morgan and Stefano C. Tognini},
+      year={2025},
+      eprint={2503.17608},
+      archivePrefix={arXiv},
+      primaryClass={physics.comp-ph},
+      url={https://arxiv.org/abs/2503.17608}, 
+} -->
+:::
+
+<!-- ::: {.even-smaller}
+> Johnson, Seth R., Amanda Lund, Philippe Canal, Stefano C. Tognini, Julien Esseiva, Soon Yung Jun, Guilherme Lima, et al. 2024. “Celeritas: Accelerating Geant4 with GPUs.” EPJ Web of Conferences 295:11005. [https://doi.org/10.1051/epjconf/202429511005](https://doi.org/10.1051/epjconf/202429511005).
+::: -->
+
+:::
+::::
+
+## [`celertias-project/regression`](https://github.com/celeritas-project/regression)
+
+::: {.smaller}
+
+<!-- > a suite of test problems in Celeritas to track whether 
+> the code is able to run to completion without hitting an assertion,
+> how the code input options (and processed output) change over time,
+> and how the kernel occupancy requirements change in response to growing code complexity -->
+
+> a suite of test problems in Celeritas to track whether
+> 
+> - the code is able to run to completion without hitting an assertion,
+> - how the code input options (and processed output) change over time,
+> - how the kernel occupancy requirements change in response to growing code complexity
+
+:::
+
+<!-- [github.com/celeritas-project/regression](https://github.com/celeritas-project/regression) -->
+
+:::: {.columns}
+::: {.column width=50%}
+
 - CPU and GPU 
 - `geant4`, `celer-g4`, `celer-sim`
+- Node-level benchmarking
+- [GitHub celeritas-project/regression](https://github.com/celeritas-project/regression)
+
+
+:::
+::: {.column width=50%}
+
 - ~22 simulation inputs 
   - 7 geometries
-  - with/without msc
-  - with/without field
   - orange vs vecgeom
+  - simulation options (msc, field)
+
+:::
+::::
 
 ## celertias-project/regression
 
@@ -99,28 +161,52 @@ include-in-header:
 # Hardware {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
 
 
+## Hardware (Upstream)
+
+<style type="text/css">
+/* Set the tr background colour to red or green for nv / amd */
+table.trbg-nv-amd tbody tr:nth-child(1),
+table.trbg-nv-amd tbody tr:nth-child(3) {
+    /* background: #BC5544; */
+    background:rgba(188, 84, 68, 0.45);
+}
+table.trbg-nv-amd tbody tr:nth-child(2),
+table.trbg-nv-amd tbody tr:nth-child(4),
+table.trbg-nv-amd tbody tr:nth-child(5) {
+    /* background: #7A954F; */
+    background:rgba(122, 149, 79, 0.45);
+}
+table.trbg-nv-amd tbody a {
+  color: var(--tuos-midnight-black);
+}
+
+/* shade out 2 rows of the table when requested */
+table.shade-r1-r2 tbody tr:first-child,
+table.shade-r1-r2 tbody tr:nth-child(2) {
+    opacity: 0.3;
+}
+</style>
+
+
+| Machine                        | CPU                             | GPU                   |
+|:-------------------------------|:--------------------------------|:----------------------|
+| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
+| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
+
+: {.trbg-nv-amd .table-full-width tbl-colwidths="[20,47,33]"}
+
+
 ## Hardware
 
+| Machine                        | CPU                             | GPU                   |
+|:-------------------------------|:--------------------------------|:----------------------|
+| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
+| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
+| [JADE@ARC][jade-arc-specs]     | 2x AMD EPYC 9534                | 8x AMD MI300x         |
+| [Bede GH200][bede-specs]       | 1x Nvidia Grace                 | 1x Nvidia GH200 480GB |
+| 3090 (TUoS)                    | 1x Intel i7-5930k               | 2x Nvidia RTX 3090    |
 
-| Machine                        | CPU                                 | GPU                   |
-|:-------------------------------|:------------------------------------|:----------------------|
-| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                    | 4x NVIDIA A100        |
-| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” CPU | 4x/8x AMD MI250x      |
-
-: {.striped .table-full-width}
-
-
-## Hardware
-
-| Machine                        | CPU                                 | GPU                   |
-|:-------------------------------|:------------------------------------|:----------------------|
-| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                    | 4x NVIDIA A100        |
-| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” CPU | 4x/8x AMD MI250x      |
-| [JADE@ARC][jade-arc-specs]     | 2x AMD EPYC 9534                    | 8x AMD MI300x         |
-| [Bede GH200][bede-specs]       | Nvidia Grace                        | 1x Nvidia GH200 480GB |
-| Waimea (local)                 | Intel i7-5930k                      | 2x Nvidia RTX 3090    |
-
-: {.striped .table-full-width}
+: {.trbg-nv-amd .table-full-width tbl-colwidths="[20,47,33]" .shade-r1-r2}
 
 
 ## JADE 2.5 / JADE@ARC
@@ -128,18 +214,18 @@ include-in-header:
 :::: {.columns}
 ::: {.column .smaller width=60%}
 
-- <u>J</u>oint <u>A</u>ceademic <u>D</u>ata Science <u>E</u>ndeavour 2.5 / @ARC
+- <u>J</u>oint <u>A</u>ceademic <u>D</u>ata Science <u>E</u>ndeavour 2.5
 - UK Tier-2 technology pilot resource
-  - funded by EPSRC
-  - owned & hosted by the University of Oxford
+  - Funded by EPSRC
+  - Hosted by the University of Oxford
 - 3 Lenovo ThinkSystem SR685a V3 Nodes
   - 2 AMD EPYC 9534 64-Core CPUs
   - 8 AMD MI300X GPUs
-- Currently in a long beta phase
+- Currently in a beta phase
   - i.e. no "real" users yet
 
 :::
-::: {.column width=40%}
+::: {.column .text-center width=40%}
 
 ![](img/oxford-arc/JADE_2.5_Logo.svg){fig-alt="JADE@ARC Logo"}
 ![](img/oxford-arc/AMD-MI300X.png){fig-alt="AMD MI300x system image"}
@@ -154,36 +240,60 @@ include-in-header:
 
 - N8 CIR Bede
 - UK Tier-2 HPC resource
-  - Originally funded by EPSRC, hosted by Durham University
+  - Originally funded by EPSRC
+  - Hosted by Durham University
   - Extended by N8 partners for 1 year
 - Grace-Hopper pilot
   - 6x NVIDIA GH200 480GB nodes
   - 72-core NVIDIA Grace ARM CPU
   - 96GB Hopper GPU
-  - Host-device NVLink C2C 
 
 :::
-::: {.column width=40%}
+::: {.column .text-center width=40%}
+
+<style type="text/css">
+ .reveal img.gh-fig {
+    object-fit:cover; width: 400px; height: 400px;
+ }
+</style>
 
 ![](img/n8-cir-bede/logo-cmyk.png){fig-alt="N8 CIR Bede Logo"}
+![NVIDIA Grace Hopper Superchip](img/nvidia/nvidia-gh200-grace-hopper-superchip-platform.png){.gh-fig}
 
 :::
 ::::
 
-## Waimea / 2x 3090 workstation
+## 2x 3090 Workstation
 
-- Shared Workstation in the RSE group at the University of Sheffield
+:::: {.columns}
+::: {.column .smaller width=60%}
+
+- Headless Workstation @ TUoS RSE
 - 1x Intel i7-5930k (6c 12t) @ 140W 
 - 2x NVIDIA RTX 5090 @ 370W
   - Consumer Ampere `SM_86`
+  - Limited FP64 hardware
+  - ~ equivalent to A40 / RTX A5500 / RTX A6000
 
-::: {.callout-warning title="Not the ideal benchmark machine"}
 
-CPU released in 2014, GPUs from 2020
+::: {.callout-important title="Not an ideal benchmark machine"}
 
+- Originally built in ~2015 as a HEDT workstation
+- GPUs upgraded in 2021 
+- **Biased towards GPUs**
 :::
 
+:::
+::: {.column .text-center width=40%}
+
+
+
 ![](img/ptheywood/waimea.jpg){fig-alt="Picture of Waimea during GPU upgrade" width=400}
+
+
+:::
+::::
+
 
 # Benchmarking {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
 
@@ -257,27 +367,55 @@ CPU released in 2014, GPUs from 2020
 
 # Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'}
 
-# Layouts @todo remove {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
+# Layouts {.divider .coral visibility="uncounted" data-hide-slide-number='true'}
 
-## Columns 
+<!-- ## Title and text
 
+- Fusce bibendum est leo, eu bibendum justo blandit sed. Mauris sit amet mattis elit. Integer quis consequat lectus. 
+- Rutrum felis sit amet, faucibus metus. Pellentesque ultricies eu turpis sit amet sollicitudin. Vestibulum porttitor nulla porta eros gravida volutpat. 
+- Fusce bibendum est leo, eu bibendum justo blandit sed. Mauris sit amet mattis elit. Integer quis sequat lectus. Rutrum felis sit amet, faucibus metus.  -->
+
+
+<!-- ## 2 equal columns 
 
 :::: {.columns}
 
-::: {.column .center width="50%"}
-foo
+::: {.column width="50%"}
+- Fusce bibendum est leo, eu bibendum justo blandit sed
+- Mauris sit amet mattis elit. Integer quis consequat lectus
+- Ut at ante eget quam maximus elementum vitae nec elit
+- Praesent ac purus purus. Etiam tristique lacus nibh, ac blandit leo porttitor 
 :::
 
-::: {.column .center width="50%"}
-bar
+::: {.column width="50%"}
+- Rutrum felis sit amet, faucibus metus. 
+- Pellentesque ultricies eu turpis sit amet sollicitudin. 
+- Vestibulum porttitor nulla porta eros gravida volutpat. 
 :::
 
-::::
+:::: -->
+
+<!-- ## Big stat
+
+:::: {.columns .center}
+
+::: {.column width=50%}
+Rutrum felis sit amet, faucibus metus. Pellentesque ultricies eu turpis sit amet sollicitudin. Vestibulum porttitor nulla porta eros gravida volutpat.
+:::
+
+::: {.column width=50%}
+
+::: {.big-stat .r-stretch}
+x%
+:::
+
+:::
+
+:::: -->
 
 ## Callouts
 
 :::: {.columns}
-
 ::: {.column width="50%"}
 ::: {.callout-note}
 note
@@ -294,7 +432,6 @@ caution
 ::: {.callout-warning}
 warning
 :::
-
 :::
 
 ::: {.column width="50%"}
@@ -313,21 +450,10 @@ caution
 ::: {.callout-warning appearance="simple"}
 warning
 :::
-
-
 :::
-
 ::::
 
 <!-- Reference links -->
-[bessemer-gpu-specs]: https://docs.hpc.shef.ac.uk/en/latest/bessemer/cluster_specs.html#gpu-node-specifications
-[stanage-gpu-specs]: https://docs.hpc.shef.ac.uk/en/latest/stanage/cluster_specs.html#gpu-nodes
-[bede-gpu-specs]: https://bede-documentation.readthedocs.io/en/latest/hardware/index.html
-[trackML.gdml]: https://gitlab.cern.ch/VecGeom/VecGeom/-/blob/master/test/gdml/gdmls/trackML.gdml?ref_type=heads
-[TBHGCal181Oct_fixdup.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EWFFpWCW4GpOhJgQfBaZTVkBjsjHke93QO7Em3TrK_GkFg
-[cms2026D110DD4hep_fix.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EfTefx_Me71Gs37_h-nuaTQB_8lqNsCMSz9kNmQOpEl2sA
-[LHCb_Upgrade_onlyECALandHCAL.gdml]: https://cern-my.sharepoint.com/:u:/g/personal/severin_diederichs_cern_ch/EWdDg95YWNNOuznQ9DnrfMUBmQrT9Akp2ixUPBuhGIdQww
-
 [perlmutter-specs]: https://docs.nersc.gov/systems/perlmutter/architecture/
 [frontier-specs]: https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes
 [bede-specs]: https://bede-documentation.readthedocs.io/en/latest/hardware/index.html

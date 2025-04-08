@@ -432,6 +432,46 @@ $callout-color-caution: $tuos-peach;
     .slide-number > a[href*='title-slide'] {
         display: none;
     }
+
+    .text-left {
+        text-align: left;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .text-right {
+        text-align: right;
+    }
+    .text-justified {
+        text-align: justified;
+    }
+
+    .big-stat {
+        font-family: $tuos-font-family-serif;
+        font-size: 10rem;
+        font-weight: bold;
+        color: $tuos-brand-violet;
+        // margin-top: 10em;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+
+    .slide.level1 div.callout.callout-note {
+        border-color: $callout-color-note;
+    }
+    .slide.level1 div.callout.callout-tip {
+        border-color: $callout-color-tip;
+    }
+    .slide.level1 div.callout.callout-important {
+        border-color: $callout-color-important;
+    }
+    .slide.level1 div.callout.callout-caution {
+        border-color: $callout-color-caution;
+    }
+    .slide.level1 div.callout.callout-warning {
+        border-color: $callout-color-warning;
+    }
 }
 .reveal.has-dark-background .footer {
     a {
