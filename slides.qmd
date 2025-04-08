@@ -343,6 +343,52 @@ async def main():
 
 :::
 
+## Update post-processing `celeritas-project/regression`
+
+::: {.callout-important appearance="minimal"}
+@todo - Update this when I have the actual plotting script done
+:::
+
+:::{style="margin-top: 1rem;"}
+:::: {.columns .smaller}
+::: {.column width=40%}
+
+```{.python filename="analyze.py" code-line-numbers="1,4-5,6-14"}
+CPU_POWER_PER_TASK= {
+    "frontier": 225 / 8,
+    "perlmutter": 280 / 4,
+    "jadearc": 280 / 4,
+}
+GPU_POWER_PER_TASK = {
+  # ...
+}
+CPU_PER_TASK = {
+  # ...
+}
+TASK_PER_NODE = {
+  # ...
+}
+```
+
+:::
+::: {.column width=60%}
+
+```{.python filename="update-plots.py" code-line-numbers="1,4-7,10-11"}
+system_color = {
+    "frontier": "#BC5544",
+    "perlmutter": "#7A954F",
+    "jadearc": "#d95f02",
+}
+# ...
+def main():
+    analyses["frontier"] = plot_minimal("frontier")
+    analyses["perlmutter"] = plot_like = plot_all("perlmutter")
+    analyses["jadearc"] = plot_minimal("jadearc")
+    # ...
+```
+:::
+::::
+:::
 
 ## Running `celeritas-project/regression`
 
