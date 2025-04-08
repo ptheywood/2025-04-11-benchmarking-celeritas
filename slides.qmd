@@ -51,9 +51,11 @@ include-in-header:
 
 ---
 
-# Celeritas {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
+<!-- # Celeritas {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 
-::: {.callout-important appearance="simple"}
+# Celeritas {.section-header background-image="img/tuos/tuos-core-template-arrows.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
+
+::: {.callout-important appearance="simple" style="width: 50%; margin: 0 auto 0 0;"}
 @todo in-slide image attribution
 :::
 
@@ -63,24 +65,34 @@ include-in-header:
 ## Celeritas
 
 :::: {.columns .smaller}
-::: {.column width=80%}
+::: {.column width=85%}
 
 > The Celeritas project implements HEP detector physics on GPU accelerator hardware with the ultimate goal of supporting the massive computational requirements of the HL-LHC upgrade.
 
+
+<!-- > Celeritas is a Monte Carlo particle transport code for simulating High Energy Physics (HEP) detectors on general purpose GPUs.
+> Motivated originally by the massive computational requirements of the High Luminosity upgrade to the Large Hadron Collider,
+> the code’s goal is to accelerate the most computationally challenging simulation problems in HEP. -->
+
 :::
-::: {.column .text-center width=20%}
+::: {.column .text-center width=15%}
 
 ![](img/celeritas-project/celeritas-square.svg){fig-alt="Celeritas project Logo"}
 
 :::
 ::::
 
-:::: {.columns .smaller}
-::: {.column width=50%}
+:::: {.columns}
+::: {.column .smaller width=50%}
 
-- [github.com/celeritas-project/celeritas](https://github.com/celeritas-project/celeritas)
+<!-- - [github.com/celeritas-project/celeritas](https://github.com/celeritas-project/celeritas) -->
 - NVIDIA GPUs via [CUDA](https://developer.nvidia.com/cuda-toolkit)
 - AMD GPUs via [HIP](https://github.com/ROCm-Developer-Tools/HIP)
+- 2 Geometry implementations
+  - [ORANGE](https://celeritas-project.github.io/celeritas/user/implementation/orange.html#api-orange) (CUDA/HIP)
+  - [VecGeom](https://gitlab.cern.ch/VecGeom/VecGeom) (CUDA)
+- Standalone executables
+- Software library
 
 :::
 ::: {.column width=50%}
@@ -102,6 +114,11 @@ include-in-header:
       url={https://arxiv.org/abs/2503.17608}, 
 } -->
 :::
+
+::: {.text-center .even-smaller}
+[github.com/celeritas-project/celeritas](https://github.com/celeritas-project/celeritas)
+:::
+
 
 <!-- ::: {.even-smaller}
 > Johnson, Seth R., Amanda Lund, Philippe Canal, Stefano C. Tognini, Julien Esseiva, Soon Yung Jun, Guilherme Lima, et al. 2024. “Celeritas: Accelerating Geant4 with GPUs.” EPJ Web of Conferences 295:11005. [https://doi.org/10.1051/epjconf/202429511005](https://doi.org/10.1051/epjconf/202429511005).
@@ -132,11 +149,11 @@ include-in-header:
 :::: {.columns .smaller}
 ::: {.column width=55%}
 
-- CPU and GPU 
-- `geant4`, `celer-g4`, `celer-sim`
+- CPU and GPU runs
+- Standalone: `celer-g4`, `celer-sim`
+- Library: `geant4` 
+- Optional power monitoring 
 - Node-level benchmarking
-- [`github.com/celeritas-project/regression`](https://github.com/celeritas-project/regression)
-
 
 :::
 ::: {.column width=45%}
@@ -145,6 +162,10 @@ include-in-header:
   - 7 geometries
   - orange vs vecgeom
   - simulation options (msc, field)
+
+::: {.text-center .smaller}
+[github.com/celeritas-project/regression](https://github.com/celeritas-project/regression)
+:::
 
 :::
 ::::
@@ -158,7 +179,9 @@ include-in-header:
 :::
 
 
-# Hardware {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
+<!-- # Hardware {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
+# Hardware {.section-header background-image="img/tuos/tuos-core-template-crown.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
+
 
 
 ## Hardware (Upstream)
@@ -168,7 +191,7 @@ include-in-header:
 | [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x  |
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
 
-: {.trbg-nv-amd .table-full-width tbl-colwidths="[20,47,33]"}
+: {.trbg-nv-amd .table-full-width tbl-colwidths="[19,47,34]"}
 
 
 ## Hardware
@@ -177,11 +200,11 @@ include-in-header:
 | :----------------------------- | :------------------------------ | :-------------------- |
 | [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
-| [JADE@ARC][jade-arc-specs]     | 2x AMD EPYC 9534                | 8x AMD MI300x         |
-| [Bede GH200][bede-specs]       | 1x Nvidia Grace                 | 1x Nvidia GH200 480GB |
-| 3090 (TUoS)                    | 1x Intel i7-5930k               | 2x Nvidia RTX 3090    |
+| [JADE 2.5][jade-arc-specs]     | 2x AMD EPYC 9534                | 8x AMD MI300x         |
+| [Bede GH200][bede-specs]       | 1x NVIDIA Grace                 | 1x NVIDIA GH200 480GB |
+| 3090 (TUoS)                    | 1x Intel i7-5930k               | 2x NVIDIA RTX 3090    |
 
-: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[20,47,33]" }
+: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[19,47,34]" }
 
 
 <!-- with footnotes instead, but this does not "print" propperlly -->
@@ -193,7 +216,7 @@ include-in-header:
 | Frontier ^[https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes] | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x  |
 | Perlmutter ^[https://docs.nersc.gov/systems/perlmutter/architecture/]                          | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
 
-: {.trbg-nv-amd .table-full-width tbl-colwidths="[20,47,33]"} -->
+: {.trbg-nv-amd .table-full-width tbl-colwidths="[19,47,34]"} -->
 
 
 <!-- ## Hardware
@@ -203,10 +226,10 @@ include-in-header:
 | Frontier ^[https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes] | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
 | Perlmutter ^[https://docs.nersc.gov/systems/perlmutter/architecture/]                          | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
 | JADE@ARC ^[https://jade-arc-docs.readthedocs.io/]                                              | 2x AMD EPYC 9534                | 8x AMD MI300x         |
-| Bede GH200 ^[https://bede-documentation.readthedocs.io/en/latest/hardware/]                    | 1x Nvidia Grace                 | 1x Nvidia GH200 480GB |
-| 3090 (TUoS)                                                                                    | 1x Intel i7-5930k               | 2x Nvidia RTX 3090    |
+| Bede GH200 ^[https://bede-documentation.readthedocs.io/en/latest/hardware/]                    | 1x NVIDIA Grace                 | 1x NVIDIA GH200 480GB |
+| 3090 (TUoS)                                                                                    | 1x Intel i7-5930k               | 2x NVIDIA RTX 3090    |
 
-: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[20,47,33]" } -->
+: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[19,47,34]" } -->
 
 
 ## JADE 2.5 / JADE@ARC
@@ -295,7 +318,8 @@ include-in-header:
 ::::
 
 
-# Benchmarking {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
+<!-- # Benchmarking {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
+# Benchmarking {.section-header background-image="img/tuos/tuos-core-template-rose.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
 
 ## Running `celeritas-project/regression`
 
@@ -318,7 +342,8 @@ include-in-header:
 :::
 
 
-# Results {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
+<!-- # Results {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
+# Results {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
 
 
 ## Results 1 @todo
@@ -374,15 +399,15 @@ lots of credit for `celeritas-project/regression` devs.
 :::
 ::::
 
-# Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'}
+<!-- # Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'} -->
 
-<!-- # Section header arrows {.section-header background-image="img/tuos/tuos-core-template-arrows.png" background-size="contain" backgrtound-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
+<!-- # Section header arrows {.section-header background-image="img/tuos/tuos-core-template-arrows.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
 
-<!-- # Section header rose {.section-header background-image="img/tuos/tuos-core-template-rose.png" background-size="contain" backgrtound-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
+<!-- # Section header rose {.section-header background-image="img/tuos/tuos-core-template-rose.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
 
-<!-- # Section header crown {.section-header background-image="img/tuos/tuos-core-template-crown.png" background-size="contain" backgrtound-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
+<!-- # Section header crown {.section-header background-image="img/tuos/tuos-core-template-crown.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
 
-<!-- # Section header book {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" backgrtound-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
+<!-- # Section header book {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
 
 <!-- Reference links -->
 [perlmutter-specs]: https://docs.nersc.gov/systems/perlmutter/architecture/
