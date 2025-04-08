@@ -2,12 +2,16 @@
 
 // brand guideline colours https://www.sheffield.ac.uk/brand-toolkit/colour
 // tuos core colours https://brand.sheffield.ac.uk/guidelines/guide/633ac0dd-9e77-42dc-b9cd-2370913f638a/page/23734967-f185-48d4-9f40-0d3cd3a8ca9f
-$tuos-deep-violet: #440099;
+$tuos-brand-violet: #440099;
+$tuos-dark-violet: #24125E;
 $tuos-electric-violet: #7000FF; // digital only
 $tuos-powder-violet: #A78CFA;
 $tuos-pale-violet: #C6BBFF;
 $tuos-midnight-black: #131E29;
 $tuos-wave-white: #f8f8f9;
+
+// Core presentation template colour
+$tuos-core-presentation-bg: #f3f3f3;
 
 // wider colour palette https://brand.sheffield.ac.uk/guidelines/guide/633ac0dd-9e77-42dc-b9cd-2370913f638a/page/ff0b6d84-e1dd-448b-9872-9b077f70c56b
 $tuos-coral: #E7004C;
@@ -29,29 +33,29 @@ $tuos-mint-green: #00CE7C;
 $tuos-mauve: #663DB3;
 
 // tuos core tints - no longer part fo the brand guidelines?
-$tuos-deep-violet-100: #440099;
+$tuos-brand-violet-100: #440099;
 $tuos-midnight-black-100: #131E29;
-$tuos-deep-violet-90: #5719A3;
+$tuos-brand-violet-90: #5719A3;
 $tuos-midnight-black-90: #2B353E;
-$tuos-deep-violet-80: #6933AD;
+$tuos-brand-violet-80: #6933AD;
 $tuos-midnight-black-80: #424B54;
-$tuos-deep-violet-70: #7C4DB8;
+$tuos-brand-violet-70: #7C4DB8;
 $tuos-midnight-black-70: #5A6269;
-$tuos-deep-violet-60: #8F66C2;
+$tuos-brand-violet-60: #8F66C2;
 $tuos-midnight-black-60: #71787F;
-$tuos-deep-violet-50: #A280CC;
+$tuos-brand-violet-50: #A280CC;
 $tuos-midnight-black-50: #898F94;
-$tuos-deep-violet-40: #B499D6;
+$tuos-brand-violet-40: #B499D6;
 $tuos-midnight-black-40: #A1A5A9;
-$tuos-deep-violet-30: #C7B3E0;
+$tuos-brand-violet-30: #C7B3E0;
 $tuos-midnight-black-30: #B8BBBF;
-$tuos-deep-violet-20: #DACCEB;
+$tuos-brand-violet-20: #DACCEB;
 $tuos-midnight-black-20: #D0D2D4;
-$tuos-deep-violet-10: #ECE6F5;
+$tuos-brand-violet-10: #ECE6F5;
 $tuos-midnight-black-10: #E7E9EA;
-$tuos-deep-violet-5: #F6F2FA;
+$tuos-brand-violet-5: #F6F2FA;
 $tuos-midnight-black-5: #F3F4F4;
-$tuos-deep-violet-3: #F9F7FC;
+$tuos-brand-violet-3: #F9F7FC;
 $tuos-midnight-black-3: #F8F8F9;
 
 // tuos colour accessibility
@@ -59,34 +63,19 @@ $tuos-midnight-black-3: #F8F8F9;
 // use black or deep violet on powder blue
 // use white or powder blue on midnight-black
 
-// eye strain (screens) - avoid pure black / pure white contrast, use midnight black-100 and midnight-black-3 instead.
-
-// tuos recommended colour combinations
-// Teal combinations: deep violet, peach, sky blue
-// Aqua combinations: deep violet, peach, powder blue
-// Sky blue combinations: deep violet, flamingo, mauve
-// Mint green combinations: deep violet, powder blue, purple
-// Spearmint combinations: deep violet, flamingo, mauve
-// Pastel green combinations: deep violet, flamingo, mauve
-// Mauve combinations: deep violet, peach, lavender
-// Purple combinations: deep violet, peach, powder blue
-// Lavender combinations: deep violet, flamingo, mauve
-// Coral combinations: deep violet, powder blue, peach
-// Flamingo combinations: deep violet, sky blue, mauve
-// Peach combinations: deep violet, sky blue, mauve
 
 // import closest fonts from googles CDN.
-// @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700,400italic,700italic);
-// @import url(https://fonts.googleapis.com/css?family=Source+Sans+3:400,700,400italic,700italic);
-// @import url(https://fonts.googleapis.com/css?family=Source+Serif+4:400,700,400italic,700italic);
-// // tuos fonts
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,600,400italic,600italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+3:400,600,400italic,600italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Serif+4:400,600,400italic,600italic);
 
-// $tuos-font-family-serif: "Source Serif Pro", "Source Serif 4", serif;
+// tuos fonts
+$tuos-font-family-serif: "Source Serif Pro", "Source Serif 4", serif;
 // $tuos-font-family-sans-serif: "Source Sans Pro", "Source Sans 3", Helvetica, sans-serif;
 // $tuos-font-family-monospace: "Source Code Pro", monospace;
 
 // tuos fonts
-$tuos-font-family-serif: "Source Serif Pro", serif;
+// $tuos-font-family-serif: "Source Serif Pro", serif;
 $tuos-font-family-sans-serif: "Source Sans Pro", Helvetica, sans-serif;
 $tuos-font-family-monospace: "Source Code Pro", monospace;
 
@@ -96,22 +85,25 @@ $tuos-font-family-monospace: "Source Code Pro", monospace;
 
 // Full list of available quarto reveal.js theme variables, from https://quarto.org/docs/presentations/revealjs/themes.html 
 // fonts
+$font-family-serif: $tuos-font-family-serif;
 $font-family-sans-serif: $tuos-font-family-sans-serif;
 $font-family-monospace: $tuos-font-family-monospace;
 // $presentation-font-size-root: 40px;
 // $presentation-font-smaller: 0.7;
 // $presentation-line-height: 1.3;
-$body-bg: $tuos-midnight-black-5;  // low eye strain colours
+// $body-bg: $tuos-midnight-black-5;  // low eye strain colours
+$body-bg: $tuos-core-presentation-bg;
 $body-color: $tuos-midnight-black;
 $text-muted: $tuos-midnight-black-50; // lighten($body-color, 50%);
-$link-color: $tuos-teal;
+$link-color: $tuos-brand-violet;
+$link-color-hover: $tuos-electric-violet;
 $link-color-hover: lighten($link-color, 15%);
 // $selection-bg: lighten($link-color, 25%);
 // $selection-color: $body-bg;
 // $border-color: lighten($body-color, 30%);
 // $border-width: 1px;
 // $border-radius: 3px;
-// $presentation-heading-font: $font-family-sans-serif;
+$presentation-heading-font: $font-family-serif;
 // $presentation-heading-color: $body-color;
 // $presentation-heading-line-height: 1.2;
 // $presentation-heading-letter-spacing: normal;
@@ -133,11 +125,23 @@ $code-block-font-size: 0.66em;
 // $code-bg: transparent;
 // $tabset-border-color: $code-block-border-color;
 $light-bg-text-color: $tuos-midnight-black;
-$light-bg-link-color: $tuos-powder-blue;
-$light-bg-code-color: $tuos-powder-blue;
-$dark-bg-text-color: $tuos-midnight-black-3;
-$dark-bg-link-color: $tuos-powder-blue;
-$dark-bg-code-color: $tuos-powder-blue;
+$light-bg-link-color: $tuos-brand-violet;
+$light-bg-code-color: $tuos-brand-violet;
+$dark-bg-text-color: $tuos-wave-white;
+$dark-bg-link-color: $tuos-pale-violet;
+$dark-bg-code-color: $tuos-pale-violet;
+
+// callouts
+$callout-border-width: 0.4rem;
+// $callout-border-scale: 0%;
+// $callout-icon-scale: 10%;
+// $callout-margin-top: 1rem;
+// $callout-margin-bottom: 1rem;
+$callout-color-note: $tuos-electric-violet;
+$callout-color-tip: $tuos-peak-green;
+$callout-color-important: $tuos-coral;
+$callout-color-caution: $tuos-peach;
+// $callout-color-warning: $tuos-flamingo;
 
 /*-- scss:rules --*/
 .reveal {
@@ -209,24 +213,23 @@ $dark-bg-code-color: $tuos-powder-blue;
     // Title slide additional formatting 
     #title-slide #title-logo-container {
         width: 8em;
-        height: 2.7em;
-        margin-bottom: 1.5em;
-        svg {
-
-        }
+        height: 3em;
+        margin-top: 3em;
+        margin-bottom: 0.5em;
     }
 
     #title-slide {
         h1 {
-            color: $tuos-deep-violet;
+            color: $tuos-brand-violet;
             font-weight:bold;
             margin-bottom: 0.5em;
+            font-family: $tuos-font-family-serif;
         }
         div.columns {
             display: flex;
         }
         p {
-            color: $tuos-deep-violet;
+            color: $tuos-midnight-black;
         }
         p.subtitle {
             font-size: $presentation-h3-font-size;
@@ -247,22 +250,26 @@ $dark-bg-code-color: $tuos-powder-blue;
         }
         h1 code {
             font-size: 80%;
-            color: $tuos-deep-violet-90;
+            color: $tuos-brand-violet-90;
         }
     }
 
     .slide h2 {
-        color: $tuos-deep-violet;
-        background: $tuos-powder-blue;
+        font-family: $tuos-font-family-serif;
+        color: $tuos-brand-violet;
+        // background: $tuos-powder-blue;
+        border-bottom: 1px solid $tuos-brand-violet;
         padding: 0.1em 0.2em;
         // Always small title size?
-        font-size: $presentation-h4-font-size;
+        font-size: $presentation-h3-font-size;
         margin-bottom: 0;
+
+        code {
+            // font-size: 90%;
+            color: $tuos-brand-violet;
+        }
     }
     .slide h1 code {
-        font-size: 90%;
-    }
-    .slide h2 code {
         font-size: 90%;
     }
 
@@ -292,27 +299,59 @@ $dark-bg-code-color: $tuos-powder-blue;
     .divider.flamingo {
         background-color: $tuos-flamingo !important;
         h1 {
-            color: $tuos-midnight-black-3;
+            color: $tuos-wave-white;
         }
     }
     .divider.coral {
         background-color: $tuos-coral !important;
         h1 {
-            color: $tuos-midnight-black-3;
+            color: $tuos-wave-white;
         }
     }
     .divider.title-slide h1{
         font-size: 2.2em;
         // margin: 0 1.5em;
         text-align: center;
+        font-family: $tuos-font-family-serif;
+        // text-align: left;
     }
 
     .divider.teal {
         background-color: $tuos-teal !important;
         h1 {
-            color: $tuos-midnight-black-3;
+            color: $tuos-wave-white;
         }
     }
+
+    .divider.dark-violet {
+        background-color: $tuos-dark-violet !important;
+        h1 {
+            color: $tuos-wave-white;
+        }
+    }
+
+    .divider.electric-violet {
+        background-color: $tuos-electric-violet !important;
+        h1 {
+            color: $tuos-wave-white;
+        }
+    }
+
+    .divider.powder-violet {
+        background-color: $tuos-powder-violet !important;
+        h1 {
+            color: $tuos-brand-violet;
+        }
+    }
+
+    .divider.pale-violet {
+        background-color: $tuos-pale-violet !important;
+        h1 {
+            color: $tuos-brand-violet;
+        }
+    }
+
+
     .footer {
         color: $tuos-midnight-black-80;
     }

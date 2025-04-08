@@ -37,8 +37,8 @@ format:
 
 # title slide background
 title-slide-attributes:
-  data-background-color: "#9ADBE8" # $tuos-powder-blue
-  # data-background-color: "#D7F1F6" # $tuos-powder-blue-40
+  data-background-color: "#f3f3f3" # $tuos-core-presentation-bg
+  # data-background-color: "#9ADBE8" # $tuos-powder-blue
 
 include-in-header:
   # Hide the logo from dark slides for now, rather than figuring out how to switch the logo for the white one
@@ -51,7 +51,7 @@ include-in-header:
 
 ---
 
-# Celeritas {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+# Celeritas {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
 
 <!-- Only 20 mins. -->
 
@@ -89,14 +89,14 @@ include-in-header:
 
 ## celertias-project/regression
 
-::: {.callout-important}
+::: {.callout-important title="@todo"}
 
-@todo - celeritas-project/regression more info / sample results
+- celeritas-project/regression more info / sample results
 
 :::
 
 
-# Hardware {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+# Hardware {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
 
 
 ## Hardware
@@ -123,19 +123,34 @@ include-in-header:
 : {.striped .table-full-width}
 
 
-## JADE 2.5 / JADE @ ARC
+## JADE 2.5 / JADE@ARC
 
-- **J**oint **A**ceademic **D**ata science **E**ndeavour
+:::: {.columns}
+::: {.column .smaller width=60%}
+
+- <u>J</u>oint <u>A</u>ceademic <u>D</u>ata Science <u>E</u>ndeavour 2.5 / @ARC
 - UK Tier-2 technology pilot resource
-  - funded by EPSRC, owned and hosted by the University of Oxford
+  - funded by EPSRC
+  - owned & hosted by the University of Oxford
 - 3 Lenovo ThinkSystem SR685a V3 Nodes
   - 2 AMD EPYC 9534 64-Core CPUs
   - 8 AMD MI300X GPUs
+- Currently in a long beta phase
+  - i.e. no "real" users yet
+
+:::
+::: {.column width=40%}
 
 ![](img/oxford-arc/JADE_2.5_Logo.svg){fig-alt="JADE@ARC Logo"}
 ![](img/oxford-arc/AMD-MI300X.png){fig-alt="AMD MI300x system image"}
 
+:::
+::::
+
 ## Bede GH200
+
+:::: {.columns}
+::: {.column .smaller width=60%}
 
 - N8 CIR Bede
 - UK Tier-2 HPC resource
@@ -146,10 +161,14 @@ include-in-header:
   - 72-core NVIDIA Grace ARM CPU
   - 96GB Hopper GPU
   - Host-device NVLink C2C 
-  
+
+:::
+::: {.column width=40%}
 
 ![](img/n8-cir-bede/logo-cmyk.png){fig-alt="N8 CIR Bede Logo"}
 
+:::
+::::
 
 ## Waimea / 2x 3090 workstation
 
@@ -166,107 +185,139 @@ CPU released in 2014, GPUs from 2020
 
 ![](img/ptheywood/waimea.jpg){fig-alt="Picture of Waimea during GPU upgrade" width=400}
 
-# Benchmarking {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+# Benchmarking {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
 
 ## Running `celeritas-project/regression`
 
-::: {.callout-important}
+::: {.callout-important title="@todo"}
 
-@todo - Info about how to run / changes required / example?
+- Info about how to run / changes required / example?
 
-@todo - maybe just fold into the results segment?
+- maybe just fold into the results segment?
 
 :::
 
 ## Combinations executed / issues encountered.
 
-::: {.callout-important}
+::: {.callout-important title="@todo"}
 
-@todo - Info about what I ran. 3090 orange only, JADE orange only. BEde both but with some caveats.
+- Info about what I ran. 3090 orange only, JADE orange only. BEde both but with some caveats.
 
-@todo - maybe just fold into the results segment?
+- maybe just fold into the results segment?
 
 :::
 
 
-# Results {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
+# Results {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
 
 
 ## Results 1 @todo
 
-::: {.callout-important}
+::: {.callout-important title="@todo"}
 
-@todo - Figure / table for some results / comparisons, depending on what plotting works nicely.
+- Figure / table for some results / comparisons, depending on what plotting works nicely.
 
 :::
 
 
 ## Results 2 @todo
 
-::: {.callout-important}
+::: {.callout-important title="@todo"}
 
-@todo - Figure / table for some results / comparisons, depending on what plotting works nicely.
-
-:::
-
-## Results 3 @todo
-
-::: {.callout-important}
-
-@todo - Figure / table for some results / comparisons, depending on what plotting works nicely.
+- Figure / table for some results / comparisons, depending on what plotting works nicely.
 
 :::
 
 ## Results 3 @todo
 
-::: {.callout-important}
+::: {.callout-important title="@todo"}
 
-@todo - Figure / table for some results / comparisons, depending on what plotting works nicely.
+- Figure / table for some results / comparisons, depending on what plotting works nicely.
 
 :::
 
-# Thank you {.divider .flamingo visibility="uncounted" data-hide-slide-number='true'}
+## Results 3 @todo
 
-::: {.callout-important}
+::: {.callout-important title="@todo"}
 
-@todo - lots of credit for celertias-project/regression devs.
+- Figure / table for some results / comparisons, depending on what plotting works nicely.
+
+:::
+
+# Thank you {.divider .dark-violet visibility="uncounted" data-hide-slide-number='true'}
+
+::: {.callout-important title="@todo"}
+
+- lots of credit for celertias-project/regression devs.
 
 [@sethrj](https://github.com/sethrj) - Seth R. Johnson
 [@esseivaju](https://github.com/esseivaju) - Julien Esseiva
 [@amandalund](https://github.com/amandalund) - Amanda Lund
 :::
 
-# Additional Slides {.divider .coral visibility="uncounted" data-hide-slide-number='true'}
+# Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'}
 
-# Layouts @todo remove {.divider .coral visibility="uncounted" data-hide-slide-number='true'}
+# Layouts @todo remove {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'}
 
 ## Columns 
 
 
 :::: {.columns}
 
-::: {.column .center width="40%"}
-
-::: {.callout-important}
-
+::: {.column .center width="50%"}
 foo
-
 :::
 
-:::
-
-::: {.column .center width="60%"}
-
-::: {.callout-note title="info"}
-
+::: {.column .center width="50%"}
 bar
+:::
 
+::::
+
+## Callouts
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.callout-note}
+note
+:::
+::: {.callout-tip}
+tip
+:::
+::: {.callout-important}
+important
+:::
+::: {.callout-caution}
+caution
+:::
+::: {.callout-warning}
+warning
 :::
 
 :::
 
+::: {.column width="50%"}
+::: {.callout-note appearance="simple"}
+note
+:::
+::: {.callout-tip appearance="simple"}
+tip
+:::
+::: {.callout-important appearance="simple"}
+important
+:::
+::: {.callout-caution appearance="simple"}
+caution
+:::
+::: {.callout-warning appearance="simple"}
+warning
 :::
 
+
+:::
+
+::::
 
 <!-- Reference links -->
 [bessemer-gpu-specs]: https://docs.hpc.shef.ac.uk/en/latest/bessemer/cluster_specs.html#gpu-node-specifications
