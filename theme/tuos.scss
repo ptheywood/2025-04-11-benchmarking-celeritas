@@ -121,8 +121,9 @@ $presentation-title-slide-text-align: left;
 // $code-block-bg: $body-bg;
 // $code-block-border-color: lighten($body-color, 60%);
 $code-block-font-size: 0.66em;
-// $code-color: var(–quarto-hl-fu-color);
-// $code-bg: transparent;
+$code-color: $tuos-electric-violet;
+// $code-color: $tuos-purple; // @todo - purple vs electric violet
+// $code-bg: $tuos-pale-violet;// transparent;
 // $tabset-border-color: $code-block-border-color;
 $light-bg-text-color: $tuos-midnight-black;
 $light-bg-link-color: $tuos-brand-violet;
@@ -143,8 +144,15 @@ $callout-color-important: $tuos-coral;
 $callout-color-caution: $tuos-peach;
 // $callout-color-warning: $tuos-flamingo;
 
+
+
 /*-- scss:rules --*/
 .reveal {
+
+    blockquote {
+        color: $tuos-midnight-black;
+        border-left-color: $tuos-brand-violet;
+    }
 
     .smaller {
         font-size: 90%;

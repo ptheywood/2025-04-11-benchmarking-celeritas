@@ -110,7 +110,7 @@ include-in-header:
 :::
 ::::
 
-## [`celeritas-project/regression`](https://github.com/celeritas-project/regression)
+## [celeritas-project/regression](https://github.com/celeritas-project/regression)
 
 ::: {.smaller}
 
@@ -129,17 +129,17 @@ include-in-header:
 
 <!-- [github.com/celeritas-project/regression](https://github.com/celeritas-project/regression) -->
 
-:::: {.columns}
-::: {.column width=50%}
+:::: {.columns .smaller}
+::: {.column width=55%}
 
 - CPU and GPU 
 - `geant4`, `celer-g4`, `celer-sim`
 - Node-level benchmarking
-- [GitHub celeritas-project/regression](https://github.com/celeritas-project/regression)
+- [`github.com/celeritas-project/regression`](https://github.com/celeritas-project/regression)
 
 
 :::
-::: {.column width=50%}
+::: {.column width=45%}
 
 - ~22 simulation inputs 
   - 7 geometries
