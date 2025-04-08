@@ -110,7 +110,7 @@ include-in-header:
 :::
 ::::
 
-## [`celertias-project/regression`](https://github.com/celeritas-project/regression)
+## [`celeritas-project/regression`](https://github.com/celeritas-project/regression)
 
 ::: {.smaller}
 
@@ -149,7 +149,7 @@ include-in-header:
 :::
 ::::
 
-## celertias-project/regression
+## celeritas-project/regression
 
 ::: {.callout-important title="@todo"}
 
@@ -358,7 +358,7 @@ table.shade-r1-r2 tbody tr:nth-child(2) {
 
 ::: {.callout-important title="@todo"}
 
-- lots of credit for celertias-project/regression devs.
+- lots of credit for celeritas-project/regression devs.
 
 [@sethrj](https://github.com/sethrj) - Seth R. Johnson
 [@esseivaju](https://github.com/esseivaju) - Julien Esseiva
