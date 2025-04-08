@@ -193,7 +193,7 @@ Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & 
 
 ## Hardware (Upstream)
 
-| Machine                        | CPU                             | GPU            |
+| Machine                        | CPU per node                    | GPU per node   |
 | :----------------------------- | :------------------------------ | :------------- |
 | [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x  |
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
@@ -287,7 +287,7 @@ Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & 
 
 ## Hardware
 
-| Machine                        | CPU                             | GPU                   |
+| Machine                        | CPU per node                    | GPU per node          |
 | :----------------------------- | :------------------------------ | :-------------------- |
 | [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
