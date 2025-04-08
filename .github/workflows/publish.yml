@@ -17,7 +17,7 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          version: 1.6.32 # 1.5.x breaks svg logos, so using a pre-release
+          version: 1.6.43 # 1.5.x breaks svg logos, 1.6.32 had bad callout icon alignment
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2

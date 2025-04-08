@@ -1,60 +1,58 @@
 /*-- scss:defaults --*/
 
 // brand guideline colours https://www.sheffield.ac.uk/brand-toolkit/colour
-// tuos core colours
+// tuos core colours https://brand.sheffield.ac.uk/guidelines/guide/633ac0dd-9e77-42dc-b9cd-2370913f638a/page/23734967-f185-48d4-9f40-0d3cd3a8ca9f
 $tuos-deep-violet: #440099;
-$tuos-powder-blue: #9ADBE8;
+$tuos-electric-violet: #7000FF; // digital only
+$tuos-powder-violet: #A78CFA;
+$tuos-pale-violet: #C6BBFF;
 $tuos-midnight-black: #131E29;
-// tuos core tints
+$tuos-wave-white: #f8f8f9;
+
+// wider colour palette https://brand.sheffield.ac.uk/guidelines/guide/633ac0dd-9e77-42dc-b9cd-2370913f638a/page/ff0b6d84-e1dd-448b-9872-9b077f70c56b
+$tuos-coral: #E7004C;
+$tuos-purple: #981F92;
+$tuos-teal: #005A8F;
+$tuos-peak-green: #005750;
+$tuos-flamingo: #FF6371;
+$tuos-pink: #FF79E1;
+$tuos-aqua: #00BBCC;
+$tuos-spearmint: #3BD4AE;
+$tuos-peach: #FF9664;
+$tuos-lavender: #DAA8E2;
+$tuos-powder-blue: #9ADBE8;
+$tuos-pastel-green: #A1DED2;
+
+// Removed brand guidelines colours, some point in 2024/5?
+$tuos-sky-blue: #64CBE8;
+$tuos-mint-green: #00CE7C;
+$tuos-mauve: #663DB3;
+
+// tuos core tints - no longer part fo the brand guidelines?
 $tuos-deep-violet-100: #440099;
-$tuos-powder-blue-100: #9ADBE8;
 $tuos-midnight-black-100: #131E29;
 $tuos-deep-violet-90: #5719A3;
-$tuos-powder-blue-90: #A4DFEA;
 $tuos-midnight-black-90: #2B353E;
 $tuos-deep-violet-80: #6933AD;
-$tuos-powder-blue-80: #AEE2ED;
 $tuos-midnight-black-80: #424B54;
 $tuos-deep-violet-70: #7C4DB8;
-$tuos-powder-blue-70: #B8E6EF;
 $tuos-midnight-black-70: #5A6269;
 $tuos-deep-violet-60: #8F66C2;
-$tuos-powder-blue-60: #C2E9F1;
 $tuos-midnight-black-60: #71787F;
 $tuos-deep-violet-50: #A280CC;
-$tuos-powder-blue-50: #CDEDF3;
 $tuos-midnight-black-50: #898F94;
 $tuos-deep-violet-40: #B499D6;
-$tuos-powder-blue-40: #D7F1F6;
 $tuos-midnight-black-40: #A1A5A9;
 $tuos-deep-violet-30: #C7B3E0;
-$tuos-powder-blue-30: #E1F4F8;
 $tuos-midnight-black-30: #B8BBBF;
 $tuos-deep-violet-20: #DACCEB;
-$tuos-powder-blue-20: #EBF8FA;
 $tuos-midnight-black-20: #D0D2D4;
-$tuos-powder-blue-15: #F0FAFC;
 $tuos-deep-violet-10: #ECE6F5;
-$tuos-powder-blue-10: #F5FBFD;
 $tuos-midnight-black-10: #E7E9EA;
 $tuos-deep-violet-5: #F6F2FA;
-$tuos-powder-blue-5: #FAFDFE;
 $tuos-midnight-black-5: #F3F4F4;
 $tuos-deep-violet-3: #F9F7FC;
 $tuos-midnight-black-3: #F8F8F9;
-// wider colour palette
-$tuos-teal: #005A8F;
-$tuos-aqua: #00BBCC;
-$tuos-sky-blue: #64CBE8;
-$tuos-mint-green: #00CE7C;
-$tuos-spearmint: #3BD4AE;
-$tuos-pastel-green: #A1DED2;
-$tuos-mauve: #663DB3;
-$tuos-purple: #981F92;
-$tuos-lavender: #DAA8E2;
-$tuos-coral: #E7004C;
-$tuos-flamingo: #FF6371;
-$tuos-peach: #FF9664;
 
 // tuos colour accessibility
 // use white or powder blue text on deep violet backgrounds

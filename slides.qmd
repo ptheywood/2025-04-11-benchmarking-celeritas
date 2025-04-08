@@ -40,6 +40,15 @@ title-slide-attributes:
   data-background-color: "#9ADBE8" # $tuos-powder-blue
   # data-background-color: "#D7F1F6" # $tuos-powder-blue-40
 
+include-in-header:
+  # Hide the logo from dark slides for now, rather than figuring out how to switch the logo for the white one
+  - text: |
+      <style>
+        .reveal.has-dark-background .slide-logo {
+          display: none !important;
+        }
+      </style>
+
 ---
 
 # Celeritas {.divider .teal visibility="uncounted" data-hide-slide-number='true'}
@@ -98,6 +107,9 @@ title-slide-attributes:
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                    | 4x NVIDIA A100        |
 | [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” CPU | 4x/8x AMD MI250x      |
 
+: {.striped .table-full-width}
+
+
 ## Hardware
 
 | Machine                        | CPU                                 | GPU                   |
@@ -107,6 +119,8 @@ title-slide-attributes:
 | [JADE@ARC][jade-arc-specs]     | 2x AMD EPYC 9534                    | 8x AMD MI300x         |
 | [Bede GH200][bede-specs]       | Nvidia Grace                        | 1x Nvidia GH200 480GB |
 | Waimea (local)                 | Intel i7-5930k                      | 2x Nvidia RTX 3090    |
+
+: {.striped .table-full-width}
 
 
 ## JADE 2.5 / JADE @ ARC
@@ -223,6 +237,35 @@ CPU released in 2014, GPUs from 2020
 :::
 
 # Additional Slides {.divider .coral visibility="uncounted" data-hide-slide-number='true'}
+
+# Layouts @todo remove {.divider .coral visibility="uncounted" data-hide-slide-number='true'}
+
+## Columns 
+
+
+:::: {.columns}
+
+::: {.column .center width="40%"}
+
+::: {.callout-important}
+
+foo
+
+:::
+
+:::
+
+::: {.column .center width="60%"}
+
+::: {.callout-note title="info"}
+
+bar
+
+:::
+
+:::
+
+:::
 
 
 <!-- Reference links -->
