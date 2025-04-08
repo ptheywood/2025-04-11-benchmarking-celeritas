@@ -52,7 +52,7 @@ include-in-header:
 ---
 
 
-# Celeritas {.section-header background-image="img/tuos/tuos-core-template-arrows.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
+# Celeritas {.section-header background-image="img/tuos/tuos-core-template-arrows.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
 <!-- # Celeritas {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 
 ::: {.callout-important appearance="simple" style="width: 50%; margin: 0 auto 0 0;"}
@@ -190,7 +190,7 @@ Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & 
 
 
 <!-- # Hardware {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
-# Hardware {.section-header background-image="img/tuos/tuos-core-template-crown.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
+# Hardware {.section-header background-image="img/tuos/tuos-core-template-crown.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
 
 
 
@@ -304,7 +304,7 @@ Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & 
 
 
 <!-- # Benchmarking {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
-# Benchmarking {.section-header background-image="img/tuos/tuos-core-template-rose.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
+# Benchmarking {.section-header background-image="img/tuos/tuos-core-template-rose.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
 
 ## Setup `celeritas-project/regression`
 
@@ -395,7 +395,7 @@ sbatch run-jadearc.sh
 
 
 <!-- # Results {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
-# Results {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
+# Results {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
 
 ## Results Frontier vs JADE 2.5? @todo
 
@@ -480,14 +480,6 @@ Finish this slide?
 ::::
 
 <!-- # Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'} -->
-
-<!-- # Section header arrows {.section-header background-image="img/tuos/tuos-core-template-arrows.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
-
-<!-- # Section header rose {.section-header background-image="img/tuos/tuos-core-template-rose.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
-
-<!-- # Section header crown {.section-header background-image="img/tuos/tuos-core-template-crown.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
-
-<!-- # Section header book {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'} -->
 
 <!-- Reference links -->
 [perlmutter-specs]: https://docs.nersc.gov/systems/perlmutter/architecture/
