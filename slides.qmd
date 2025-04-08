@@ -171,10 +171,7 @@ include-in-header:
 
 ## celeritas-project/regression
 
-::: {.callout-important appearance="simple"}
-@todo - image credit
-:::
-
+<!-- @todo - better image credit? -->
 
 ::: {#fig-regression-frontier-perlmutter layout-ncol=2}
 
@@ -183,7 +180,7 @@ include-in-header:
 ![](./img/celeritas-project/regression-v0.5.1-frontier-perlmutter-event-per-energy.png){fig-alt="Regression per-node efficiency using v0.5.1 on Perlmutter & Frontier"}
 
 
-Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & Frontier. Credit @todo
+Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & Frontier. <br /> Generated using `update-plots.py` from commit [d5b5c03](https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e)
 
 :::
 
