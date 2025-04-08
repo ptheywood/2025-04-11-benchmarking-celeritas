@@ -69,7 +69,6 @@ include-in-header:
 
 > The Celeritas project implements HEP detector physics on GPU accelerator hardware with the ultimate goal of supporting the massive computational requirements of the HL-LHC upgrade.
 
-
 <!-- > Celeritas is a Monte Carlo particle transport code for simulating High Energy Physics (HEP) detectors on general purpose GPUs.
 > Motivated originally by the massive computational requirements of the High Luminosity upgrade to the Large Hadron Collider,
 > the code’s goal is to accelerate the most computationally challenging simulation problems in HEP. -->
@@ -152,7 +151,7 @@ include-in-header:
 - CPU and GPU runs
 - Standalone: `celer-g4`, `celer-sim`
 - Library: `geant4` 
-- Optional power monitoring 
+- GPU power usage monitoring 
 - Node-level benchmarking
 
 :::
@@ -172,11 +171,22 @@ include-in-header:
 
 ## celeritas-project/regression
 
-::: {.callout-important title="@todo"}
+::: {.callout-important appearance="simple"}
+@todo - image credit
+:::
 
-- celeritas-project/regression more info / sample results
+
+::: {#fig-regression-frontier-perlmutter layout-ncol=2}
+
+![](./img/celeritas-project/regression-v0.5.1-frontier-perlmutter-event-per-node.png){fig-alt="Regression per-node throughput using v0.5.1 on Perlmutter & Frontier"}
+
+![](./img/celeritas-project/regression-v0.5.1-frontier-perlmutter-event-per-energy.png){fig-alt="Regression per-node efficiency using v0.5.1 on Perlmutter & Frontier"}
+
+
+Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & Frontier. Credit @todo
 
 :::
+
 
 
 <!-- # Hardware {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
@@ -192,45 +202,6 @@ include-in-header:
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
 
 : {.trbg-nv-amd .table-full-width tbl-colwidths="[19,47,34]"}
-
-
-## Hardware
-
-| Machine                        | CPU                             | GPU                   |
-| :----------------------------- | :------------------------------ | :-------------------- |
-| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
-| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
-| [JADE 2.5][jade-arc-specs]     | 2x AMD EPYC 9534                | 8x AMD MI300x         |
-| [Bede GH200][bede-specs]       | 1x NVIDIA Grace                 | 1x NVIDIA GH200 480GB |
-| 3090 (TUoS)                    | 1x Intel i7-5930k               | 2x NVIDIA RTX 3090    |
-
-: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[19,47,34]" }
-
-
-<!-- with footnotes instead, but this does not "print" propperlly -->
-
-<!-- ## Hardware (Upstream)
-
-| Machine                                                                                        | CPU                             | GPU            |
-| :--------------------------------------------------------------------------------------------- | :------------------------------ | :------------- |
-| Frontier ^[https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes] | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x  |
-| Perlmutter ^[https://docs.nersc.gov/systems/perlmutter/architecture/]                          | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
-
-: {.trbg-nv-amd .table-full-width tbl-colwidths="[19,47,34]"} -->
-
-
-<!-- ## Hardware
-
-| Machine                                                                                        | CPU                             | GPU                   |
-| :--------------------------------------------------------------------------------------------- | :------------------------------ | :-------------------- |
-| Frontier ^[https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes] | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
-| Perlmutter ^[https://docs.nersc.gov/systems/perlmutter/architecture/]                          | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
-| JADE@ARC ^[https://jade-arc-docs.readthedocs.io/]                                              | 2x AMD EPYC 9534                | 8x AMD MI300x         |
-| Bede GH200 ^[https://bede-documentation.readthedocs.io/en/latest/hardware/]                    | 1x NVIDIA Grace                 | 1x NVIDIA GH200 480GB |
-| 3090 (TUoS)                                                                                    | 1x Intel i7-5930k               | 2x NVIDIA RTX 3090    |
-
-: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[19,47,34]" } -->
-
 
 ## JADE 2.5 / JADE@ARC
 
@@ -256,20 +227,20 @@ include-in-header:
 :::
 ::::
 
-## Bede GH200
+## Bede GH200 Pilot
 
 :::: {.columns}
 ::: {.column .smaller width=60%}
 
-- N8 CIR Bede
+- N8 CIR Bede Grace-Hopper Pilot
 - UK Tier-2 HPC resource
   - Originally funded by EPSRC
   - Hosted by Durham University
   - Extended by N8 partners for 1 year
-- Grace-Hopper pilot
-  - 6x NVIDIA GH200 480GB nodes
-  - 72-core NVIDIA Grace ARM CPU
-  - 96GB Hopper GPU
+- 6x NVIDIA GH200 480GB nodes
+  - 1 NVIDIA Grace 72-core ARM CPU
+  - 1 96GB Hopper GPU
+  - NVLink-C2C host-device interconnect
 
 :::
 ::: {.column .text-center width=40%}
@@ -295,8 +266,8 @@ include-in-header:
 - 1x Intel i7-5930k (6c 12t) @ 140W 
 - 2x NVIDIA RTX 5090 @ 370W
   - Consumer Ampere `SM_86`
-  - Limited FP64 hardware
-  - ~ equivalent to A40 / RTX A5500 / RTX A6000
+  - Limited FP64 hardware (`1:64`)
+  - *~Equivalent* to A40 / RTX A5500 / RTX A6000
 
 
 ::: {.callout-important title="Not an ideal benchmark machine"}
@@ -317,45 +288,116 @@ include-in-header:
 :::
 ::::
 
+## Hardware
+
+| Machine                        | CPU                             | GPU                   |
+| :----------------------------- | :------------------------------ | :-------------------- |
+| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
+| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
+| [JADE 2.5][jade-arc-specs]     | 2x AMD EPYC 9534                | 8x AMD MI300x         |
+| [Bede GH200][bede-specs]       | 1x NVIDIA Grace                 | 1x NVIDIA GH200 480GB |
+| 3090 (TUoS)                    | 1x Intel i7-5930k               | 2x NVIDIA RTX 3090    |
+
+: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[19,47,34]" }
+
+
+
 
 <!-- # Benchmarking {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 # Benchmarking {.section-header background-image="img/tuos/tuos-core-template-rose.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
 
+## Setup `celeritas-project/regression`
+
+::: {.smaller style="margin-top: 1rem;"}
+
+```bash
+# Assuming a working install of celeritas
+git clone git@github.com:celeritas-project/regression
+cd regression
+git-lfs install
+git-lfs pull
+```
+
+:::
+
+::: {.smaller style="margin-top: 1rem"}
+
+
+```{.python filename="run-problems.py" code-line-numbers="1-8,15"}
+class JadeARC(System):
+    build_dirs = {
+        "orange": Path("/path/to/celeritas/build-ndebug"),
+    }
+    name = "jadearc"
+    num_jobs = 1 # 8 MI300X per node
+    gpu_per_job = 1
+    cpu_per_job = 16 # 128 core per node
+    # ...
+
+# ...
+
+async def main():
+  # ...
+    _systems = {S.name: S for S in [Frontier, Perlmutter, Wildstyle, JadeARC]}
+```
+
+:::
+
+
 ## Running `celeritas-project/regression`
 
-::: {.callout-important title="@todo"}
+:::{style="margin-top: 1rem;"}
 
-- Info about how to run / changes required / example?
+:::: {.columns .smaller}
 
-- maybe just fold into the results segment?
+::: {.column width=100%}
+
+```{.bash filename="run-jadearc.sh" code-line-numbers="5-8,11,14"}
+#!/bin/bash -e
+#SBATCH -A jade-beta
+#SBATCH -p medium
+#SBATCH -t 2:59:59
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --gres=gpu:8
+#SBATCH --cpus-per-gpu=16
+
+# Load modules + activate spack environment
+source path/to/jadearc.sh 2> /dev/null
+
+echo "Running on $HOSTNAME at $(date)"
+python3 run-problems.py jadearc
+echo "Completed at $(date)"
+exit 0
+```
+
+<!-- ```{.bash}
+sbatch run-jadearc.sh
+``` -->
 
 :::
-
-## Combinations executed / issues encountered.
-
-::: {.callout-important title="@todo"}
-
-- Info about what I ran. 3090 orange only, JADE orange only. BEde both but with some caveats.
-
-- maybe just fold into the results segment?
-
+::::
 :::
+
+## @todo better title - Partial / Incomplete results
+
+- Celeritas `v0.5.1` using CUDA `12.6` / ROCm `6.2.1`
+
+- JADE 2.5
+  - Single-GPU run only, due to queue time for full node? 
+  - **@todo check this.**
+  - Manually installed dependencies, Spack was unhappy with system provided compilers
+- Bede GH200
+  - `72` host threads + `1` GPU led to CUDA OOM - reduced to `36`
+  - **Some errors @todo.**
+- 3090
+  - No VecGeom results due to Ubuntu/VecGeom link failures
 
 
 <!-- # Results {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 # Results {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" background-position="right" background-color="#f3f3f3" visibility="uncounted" data-hide-slide-number='true'}
 
-
-## Results 1 @todo
-
-::: {.callout-important title="@todo"}
-
-- Figure / table for some results / comparisons, depending on what plotting works nicely.
-
-:::
-
-
-## Results 2 @todo
+## Results Frontier vs JADE 2.5? @todo
 
 ::: {.callout-important title="@todo"}
 
@@ -363,7 +405,8 @@ include-in-header:
 
 :::
 
-## Results 3 @todo
+
+## Results Perlmutter vs GH200? @todo
 
 ::: {.callout-important title="@todo"}
 
@@ -371,29 +414,66 @@ include-in-header:
 
 :::
 
-## Results 3 @todo
+## Results Perlmutter vs GH200 vs 3090? @todo
 
 ::: {.callout-important title="@todo"}
 
 - Figure / table for some results / comparisons, depending on what plotting works nicely.
 
 :::
+
+## Results Everything? @todo
+
+::: {.callout-important title="@todo"}
+
+- Figure / table for some results / comparisons, depending on what plotting works nicely.
+
+:::
+
+## Results Per GPU? @todo
+
+
+::: {.callout-important title="@todo"}
+
+- Figure / table for some results / comparisons, depending on what plotting works nicely.
+
+:::
+
+## Results - Power consumation? @todo
+
+::: {.callout-important title="@todo"}
+
+- Figure / table for some results / comparisons, depending on what plotting works nicely.
+
+:::
+
+## Todo / What's next 
+
+::: {.callout-important title="@todo"}
+Finish this slide?
+:::
+
+- Finish/Fix `roc-smi` power monitoring
+- Re-run on a full 8x MI300x node (in-queue)
+- Investigate failures on GH200 and re-run
+  - Try Celeritas v0.6?
+  - Update Spack for newer dependency resolution?
+- Tidy up into a branch on my fork of `regression` for future re-runs
+
 
 # Thank you {.divider .dark-violet visibility="uncounted" data-hide-slide-number='true'}
 
 :::: {.columns}
-::: {.column width=25%}
+::: {.column width=27%}
 :::
-::: {.column width=50%}
+::: {.column .smaller width=44%}
 
-
-::: {.callout-important title="@todo"}
-
-lots of credit for `celeritas-project/regression` devs.
-
-- [@sethrj](https://github.com/sethrj) - Seth R. Johnson
-- [@esseivaju](https://github.com/esseivaju) - Julien Esseiva
-- [@amandalund](https://github.com/amandalund) - Amanda Lund
+::: {.callout-tip title="Acknowledgements"}
+- [`celeritas-project/celeritas`](https://github.com/celeritas-project/celeritas/graphs/contributors) developers
+- [`celeritas-project/regression`](https://github.com/celeritas-project/regression/graphs/contributors) developers
+  - Seth R. Johnson [@sethrj](https://github.com/sethrj)
+  - Julien Esseiva [@esseivaju](https://github.com/esseivaju)
+  - Amanda Lund [@amandalund](https://github.com/amandalund)
 :::
 
 :::
