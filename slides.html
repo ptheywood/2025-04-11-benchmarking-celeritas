@@ -321,8 +321,8 @@
 <li>~22 simulation inputs
 <ul>
 <li>7 geometries</li>
-<li>orange vs vecgeom</li>
 <li>simulation options (msc, field)</li>
+<li>orange vs vecgeom</li>
 </ul></li>
 </ul>
 <div class="text-center smaller">
@@ -330,9 +330,8 @@
 </div>
 </div></div>
 </section>
-<section id="celeritas-projectregression-1" class="slide level2">
-<h2>celeritas-project/regression</h2>
-<!-- @todo - better image credit? -->
+<section id="celeritas-projectregression-reference-plots" class="slide level2">
+<h2>celeritas-project/regression reference plots</h2>
 <div id="fig-regression-frontier-perlmutter" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig">
 <div aria-describedby="fig-regression-frontier-perlmutter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -346,7 +345,7 @@
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regression-frontier-perlmutter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter &amp; Frontier. <br> Generated using <code>update-plots.py</code> from commit <a href="https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e">d5b5c03</a>
+Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas <code>v0.5.1</code> on Frontier &amp; Perlmutter. <br> Generated using <code>update-plots.py</code> from commit <a href="https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e">d5b5c03</a>
 </figcaption>
 </figure>
 </div>
@@ -386,6 +385,50 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 o
 </tbody>
 </table>
 </section>
+<section id="hardware-1" class="slide level2">
+<h2>Hardware</h2>
+<table class="trbg-nv-amd shade-r1-r2 table-full-width caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 47%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Machine</th>
+<th style="text-align: left;">CPU per node</th>
+<th style="text-align: left;">GPU per node</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes">Frontier</a></td>
+<td style="text-align: left;">1x AMD “Optimized 3rd Gen EPYC”</td>
+<td style="text-align: left;">8x AMD MI250x</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://docs.nersc.gov/systems/perlmutter/architecture/">Perlmutter</a></td>
+<td style="text-align: left;">1x AMD EPYC 7763</td>
+<td style="text-align: left;">4x NVIDIA A100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><a href="https://jade-arc-docs.readthedocs.io/">JADE 2.5</a></td>
+<td style="text-align: left;">2x AMD EPYC 9534</td>
+<td style="text-align: left;">8x AMD MI300x</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><a href="https://bede-documentation.readthedocs.io/en/latest/hardware/index.html">Bede GH200</a></td>
+<td style="text-align: left;">1x NVIDIA Grace</td>
+<td style="text-align: left;">1x NVIDIA GH200 480GB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3090 (TUoS)</td>
+<td style="text-align: left;">1x Intel i7-5930k</td>
+<td style="text-align: left;">2x NVIDIA RTX 3090</td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="jade-2.5-jadearc" class="slide level2">
 <h2>JADE 2.5 / JADE@ARC</h2>
 <div class="columns">
@@ -399,8 +442,8 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 o
 </ul></li>
 <li>3 Lenovo ThinkSystem SR685a V3 Nodes
 <ul>
-<li>2 AMD EPYC 9534 64-Core CPUs</li>
-<li>8 AMD MI300X GPUs</li>
+<li>2 AMD EPYC 9534 64-Core CPUs @ 280W</li>
+<li>8 AMD MI300X GPUs @ 750W <!-- need rocsmi to check configured power? --></li>
 </ul></li>
 <li>Currently in a beta phase
 <ul>
@@ -425,8 +468,8 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 o
 </ul></li>
 <li>6x NVIDIA GH200 480GB nodes
 <ul>
-<li>1 NVIDIA Grace 72-core ARM CPU</li>
-<li>1 96GB Hopper GPU</li>
+<li>1 NVIDIA Grace 72-core ARM CPU @ 100W</li>
+<li>1 96GB Hopper GPU @ 900W</li>
 <li>NVLink-C2C host-device interconnect</li>
 </ul></li>
 </ul>
@@ -473,52 +516,8 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 o
 </div>
 </div>
 </div><div class="column text-center" style="width:40%;">
-<p><img data-src="img/ptheywood/waimea.jpg" alt="Picture of Waimea during GPU upgrade" width="400"></p>
+<p><img data-src="img/ptheywood/waimea.jpg" alt="Picture of 2x 3090 workstation" width="400"></p>
 </div></div>
-</section>
-<section id="hardware-1" class="slide level2">
-<h2>Hardware</h2>
-<table class="trbg-nv-amd shade-r1-r2 table-full-width caption-top">
-<colgroup>
-<col style="width: 19%">
-<col style="width: 47%">
-<col style="width: 34%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Machine</th>
-<th style="text-align: left;">CPU per node</th>
-<th style="text-align: left;">GPU per node</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><a href="https://docs.olcf.ornl.gov/systems/frontier_user_guide.html#frontier-compute-nodes">Frontier</a></td>
-<td style="text-align: left;">1x AMD “Optimized 3rd Gen EPYC”</td>
-<td style="text-align: left;">8x AMD MI250x</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><a href="https://docs.nersc.gov/systems/perlmutter/architecture/">Perlmutter</a></td>
-<td style="text-align: left;">1x AMD EPYC 7763</td>
-<td style="text-align: left;">4x NVIDIA A100</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><a href="https://jade-arc-docs.readthedocs.io/">JADE 2.5</a></td>
-<td style="text-align: left;">2x AMD EPYC 9534</td>
-<td style="text-align: left;">8x AMD MI300x</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><a href="https://bede-documentation.readthedocs.io/en/latest/hardware/index.html">Bede GH200</a></td>
-<td style="text-align: left;">1x NVIDIA Grace</td>
-<td style="text-align: left;">1x NVIDIA GH200 480GB</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">3090 (TUoS)</td>
-<td style="text-align: left;">1x Intel i7-5930k</td>
-<td style="text-align: left;">2x NVIDIA RTX 3090</td>
-</tr>
-</tbody>
-</table>
 <!-- # Benchmarking {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 </section></section>
 <section>
@@ -545,7 +544,7 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 o
 <span id="cb2-3"><a href=""></a>        <span class="st">"orange"</span>: Path(<span class="st">"/path/to/celeritas/build-ndebug"</span>),</span>
 <span id="cb2-4"><a href=""></a>    }</span>
 <span id="cb2-5"><a href=""></a>    name <span class="op">=</span> <span class="st">"jadearc"</span></span>
-<span id="cb2-6"><a href=""></a>    num_jobs <span class="op">=</span> <span class="dv">1</span> <span class="co"># 8 MI300X per node</span></span>
+<span id="cb2-6"><a href=""></a>    num_jobs <span class="op">=</span> <span class="dv">8</span> <span class="co"># 8 MI300X per node</span></span>
 <span id="cb2-7"><a href=""></a>    gpu_per_job <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb2-8"><a href=""></a>    cpu_per_job <span class="op">=</span> <span class="dv">16</span> <span class="co"># 128 core per node</span></span>
 <span id="cb2-9"><a href=""></a>    <span class="co"># ...</span></span>
@@ -558,15 +557,8 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 o
 </div>
 </div>
 </section>
-<section id="update-post-processing-celeritas-projectregression" class="slide level2">
-<h2>Update post-processing <code>celeritas-project/regression</code></h2>
-<div class="callout callout-important no-icon callout-style-simple">
-<div class="callout-body">
-<div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> - Update this when I have the actual plotting script done</p>
-</div>
-</div>
-</div>
+<section id="setup-celeritas-projectregression-cont." class="slide level2">
+<h2>Setup <code>celeritas-project/regression</code> cont.</h2>
 <div style="margin-top: 1rem;">
 <div class="columns smaller">
 <div class="column" style="width:40%;">
@@ -574,37 +566,50 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 o
 <div class="code-with-filename-file">
 <pre><strong>analyze.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb3" data-filename="analyze.py" data-code-line-numbers="1,4-5,6-14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>CPU_POWER_PER_TASK<span class="op">=</span> {</span>
+<div class="sourceCode" id="cb3" data-filename="analyze.py" data-code-line-numbers="1,4-5,6-16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>CPU_POWER_PER_TASK<span class="op">=</span> {</span>
 <span id="cb3-2"><a href=""></a>    <span class="st">"frontier"</span>: <span class="dv">225</span> <span class="op">/</span> <span class="dv">8</span>,</span>
 <span id="cb3-3"><a href=""></a>    <span class="st">"perlmutter"</span>: <span class="dv">280</span> <span class="op">/</span> <span class="dv">4</span>,</span>
 <span id="cb3-4"><a href=""></a>    <span class="st">"jadearc"</span>: <span class="dv">280</span> <span class="op">/</span> <span class="dv">4</span>,</span>
-<span id="cb3-5"><a href=""></a>}</span>
-<span id="cb3-6"><a href=""></a>GPU_POWER_PER_TASK <span class="op">=</span> {</span>
-<span id="cb3-7"><a href=""></a>  <span class="co"># ...</span></span>
-<span id="cb3-8"><a href=""></a>}</span>
-<span id="cb3-9"><a href=""></a>CPU_PER_TASK <span class="op">=</span> {</span>
-<span id="cb3-10"><a href=""></a>  <span class="co"># ...</span></span>
-<span id="cb3-11"><a href=""></a>}</span>
-<span id="cb3-12"><a href=""></a>TASK_PER_NODE <span class="op">=</span> {</span>
-<span id="cb3-13"><a href=""></a>  <span class="co"># ...</span></span>
-<span id="cb3-14"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href=""></a>    <span class="st">"bede"</span>: <span class="dv">100</span> <span class="op">/</span> <span class="dv">1</span>,</span>
+<span id="cb3-6"><a href=""></a>    <span class="st">"waimea"</span>: <span class="dv">140</span> <span class="op">/</span> <span class="dv">2</span>,</span>
+<span id="cb3-7"><a href=""></a>}</span>
+<span id="cb3-8"><a href=""></a>GPU_POWER_PER_TASK <span class="op">=</span> {</span>
+<span id="cb3-9"><a href=""></a>  <span class="co"># ...</span></span>
+<span id="cb3-10"><a href=""></a>}</span>
+<span id="cb3-11"><a href=""></a>CPU_PER_TASK <span class="op">=</span> {</span>
+<span id="cb3-12"><a href=""></a>  <span class="co"># ...</span></span>
+<span id="cb3-13"><a href=""></a>}</span>
+<span id="cb3-14"><a href=""></a>TASK_PER_NODE <span class="op">=</span> {</span>
+<span id="cb3-15"><a href=""></a>  <span class="co"># ...</span></span>
+<span id="cb3-16"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:60%;">
+<style>
+  /* Hide x overflow, we dont' care about the offscreen code. */
+  .reveal pre.sourceCode.no-hscroll code {
+    overflow-x: hidden;
+  }
+</style>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>update-plots.py</strong></pre>
 </div>
-<div class="sourceCode" id="cb4" data-filename="update-plots.py" data-code-line-numbers="1,4-7,10-11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>system_color <span class="op">=</span> {</span>
+<div class="sourceCode" id="cb4" data-filename="update-plots.py" data-code-line-numbers="1,4-7,12-14"><pre class="sourceCode numberSource python no-hscroll number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a>system_color <span class="op">=</span> {</span>
 <span id="cb4-2"><a href=""></a>    <span class="st">"frontier"</span>: <span class="st">"#BC5544"</span>,</span>
 <span id="cb4-3"><a href=""></a>    <span class="st">"perlmutter"</span>: <span class="st">"#7A954F"</span>,</span>
-<span id="cb4-4"><a href=""></a>    <span class="st">"jadearc"</span>: <span class="st">"#d95f02"</span>,</span>
-<span id="cb4-5"><a href=""></a>}</span>
-<span id="cb4-6"><a href=""></a><span class="co"># ...</span></span>
-<span id="cb4-7"><a href=""></a><span class="kw">def</span> main():</span>
-<span id="cb4-8"><a href=""></a>    analyses[<span class="st">"frontier"</span>] <span class="op">=</span> plot_minimal(<span class="st">"frontier"</span>)</span>
-<span id="cb4-9"><a href=""></a>    analyses[<span class="st">"perlmutter"</span>] <span class="op">=</span> plot_like <span class="op">=</span> plot_all(<span class="st">"perlmutter"</span>)</span>
-<span id="cb4-10"><a href=""></a>    analyses[<span class="st">"jadearc"</span>] <span class="op">=</span> plot_minimal(<span class="st">"jadearc"</span>)</span>
-<span id="cb4-11"><a href=""></a>    <span class="co"># ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-4"><a href=""></a>    <span class="st">"jadearc"</span>: <span class="st">"#E7298A"</span>,</span>
+<span id="cb4-5"><a href=""></a>    <span class="st">"bede"</span>: <span class="st">"#1B9E77"</span>,</span>
+<span id="cb4-6"><a href=""></a>    <span class="st">"waimea"</span>: <span class="st">"#666666"</span>,</span>
+<span id="cb4-7"><a href=""></a>}</span>
+<span id="cb4-8"><a href=""></a><span class="co"># ...</span></span>
+<span id="cb4-9"><a href=""></a><span class="kw">def</span> main():</span>
+<span id="cb4-10"><a href=""></a>    analyses[<span class="st">"frontier"</span>] <span class="op">=</span> plot_minimal(<span class="st">"frontier"</span>)</span>
+<span id="cb4-11"><a href=""></a>    analyses[<span class="st">"perlmutter"</span>] <span class="op">=</span> plot_like <span class="op">=</span> plot_all(<span class="st">"perlmutter"</span>)</span>
+<span id="cb4-12"><a href=""></a>    analyses[<span class="st">"jadearc"</span>] <span class="op">=</span> plot_minimal(<span class="st">"jadearc"</span>)</span>
+<span id="cb4-13"><a href=""></a>    analyses[<span class="st">"bede"</span>] <span class="op">=</span> plot_minimal(<span class="st">"bede"</span>)</span>
+<span id="cb4-14"><a href=""></a>    analyses[<span class="st">"waimea"</span>] <span class="op">=</span> plot_minimal(<span class="st">"waimea"</span>)</span>
+<span id="cb4-15"><a href=""></a>    <span class="co"># ...</span></span>
+<span id="cb4-16"><a href=""></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 </div>
@@ -641,26 +646,47 @@ sbatch run-jadearc.sh
 </div></div>
 </div>
 </section>
-<section id="todo-better-title---partial-incomplete-results" class="slide level2">
-<h2><span class="citation" data-cites="todo">@todo</span> better title - Partial / Incomplete results</h2>
+<section id="current-limitations" class="slide level2">
+<h2>Current Limitations</h2>
+<div class="columns smaller">
+<div class="column" style="width:50%;">
 <ul>
-<li><p>Celeritas <code>v0.5.1</code> using CUDA <code>12.6</code> / ROCm <code>6.2.1</code></p></li>
-<li><p>JADE 2.5</p>
+<li>Celeritas <code>v0.5.1</code></li>
+<li>CUDA <code>12.6</code></li>
+<li>ROCm <code>6.2.1</code></li>
+</ul>
+</div><div class="column" style="width:50%;">
 <ul>
-<li>Single-GPU run only, due to queue time for full node?</li>
-<li><strong><span class="citation" data-cites="todo">@todo</span> check this.</strong></li>
-<li>Manually installed dependencies, Spack was unhappy with system provided compilers</li>
-</ul></li>
-<li><p>Bede GH200</p>
-<ul>
-<li><code>72</code> host threads + <code>1</code> GPU led to CUDA OOM - reduced to <code>36</code></li>
-<li><strong>Some errors <span class="citation" data-cites="todo">@todo</span>.</strong></li>
-</ul></li>
-<li><p>3090</p>
+<li>2x 3090
 <ul>
 <li>No VecGeom results due to Ubuntu/VecGeom link failures</li>
+<li>Some CPU runs timedout due to old CPU.</li>
 </ul></li>
 </ul>
+</div></div>
+<div class="columns smaller">
+<div class="column" style="width:50%;">
+<ul>
+<li>JADE 2.5
+<ul>
+<li>Power monitoring not implemented (<code>amd-smi</code>)</li>
+<li>Single-GPU run with 16 CPU cores only</li>
+<li>Manually installed dependencies (spack unhappy)</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Bede GH200
+<ul>
+<li>Power monitoring errors</li>
+<li>G4 GPU offload errors with CUDA OOM
+<ul>
+<li>72 CPUs for 1 GPU is not typical</li>
+</ul></li>
+<li>Some G4 failures with OK looking stdout/stderr</li>
+</ul></li>
+</ul>
+</div></div>
 <!-- # Results {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 </section></section>
 <section>
@@ -668,152 +694,138 @@ sbatch run-jadearc.sh
 <h1>Results</h1>
 
 </section>
-<section id="results-frontier-vs-jade-2.5-todo" class="slide level2">
-<h2>Results Frontier vs JADE 2.5? <span class="citation" data-cites="todo">@todo</span></h2>
-<div title="@todo">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="citation" data-cites="todo">@todo</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Figure / table for some results / comparisons, depending on what plotting works nicely.</li>
-</ul>
-</div>
-</div>
+<section id="results-per-node-throughput-all" class="slide level2">
+<h2>Results: Per-node throughput (all)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/event-per-node-all.png" height="540"></p>
+<figcaption>All per-node throughput results</figcaption>
+</figure>
 </div>
 </div>
 </section>
-<section id="results-perlmutter-vs-gh200-todo" class="slide level2">
-<h2>Results Perlmutter vs GH200? <span class="citation" data-cites="todo">@todo</span></h2>
-<div title="@todo">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="citation" data-cites="todo">@todo</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Figure / table for some results / comparisons, depending on what plotting works nicely.</li>
-</ul>
-</div>
-</div>
+<section id="results-per-node-throughput-amd" class="slide level2">
+<h2>Results: Per-node throughput (AMD)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/combinations/event-per-node-frontier-jadearc.png" height="540"></p>
+<figcaption>Per-node throughput for AMD systems (Frontier &amp; JADE 2.5)</figcaption>
+</figure>
 </div>
 </div>
 </section>
-<section id="results-perlmutter-vs-gh200-vs-3090-todo" class="slide level2">
-<h2>Results Perlmutter vs GH200 vs 3090? <span class="citation" data-cites="todo">@todo</span></h2>
-<div title="@todo">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="citation" data-cites="todo">@todo</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Figure / table for some results / comparisons, depending on what plotting works nicely.</li>
-</ul>
-</div>
-</div>
+<section id="results-per-node-throughput-nvidia-hpc" class="slide level2">
+<h2>Results: Per-node throughput (NVIDIA HPC)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/combinations/event-per-node-perlmutter-bede.png" height="540"></p>
+<figcaption>Per-node throughput for NVIDIA HPC systems (Perlmutter &amp; Bede GH200)</figcaption>
+</figure>
 </div>
 </div>
 </section>
-<section id="results-everything-todo" class="slide level2">
-<h2>Results Everything? <span class="citation" data-cites="todo">@todo</span></h2>
-<div title="@todo">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="citation" data-cites="todo">@todo</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Figure / table for some results / comparisons, depending on what plotting works nicely.</li>
-</ul>
-</div>
-</div>
+<section id="results-per-gpu-throughput-nvidia-hpc" class="slide level2">
+<h2>Results: Per-GPU throughput (NVIDIA HPC)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/combinations/event-per-task-gpu-only-perlmutter-bede.png" height="540"></p>
+<figcaption>Per-node throughput for NVIDIA HPC systems (Perlmutter &amp; Bede GH200).<br>To account for the difference in GPU count per node (4 vs 1)</figcaption>
+</figure>
 </div>
 </div>
 </section>
-<section id="results-per-gpu-todo" class="slide level2">
-<h2>Results Per GPU? <span class="citation" data-cites="todo">@todo</span></h2>
-<div title="@todo">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="citation" data-cites="todo">@todo</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Figure / table for some results / comparisons, depending on what plotting works nicely.</li>
-</ul>
-</div>
-</div>
+<section id="results-per-node-throughput-amd-nvidia-hpc" class="slide level2">
+<h2>Results: Per-node throughput (AMD &amp; NVIDIA HPC)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/combinations/event-per-node-frontier-perlmutter-jadearc-bede.png" height="540"></p>
+<figcaption>Per-node throughput for AMD &amp; NVIDIA HPC systems (Frontier, Perlmutter, JADE 2.5 &amp; Bede GH200)</figcaption>
+</figure>
 </div>
 </div>
 </section>
-<section id="results---power-consumation-todo" class="slide level2">
-<h2>Results - Power consumation? <span class="citation" data-cites="todo">@todo</span></h2>
-<div title="@todo">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="citation" data-cites="todo">@todo</span></strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>Figure / table for some results / comparisons, depending on what plotting works nicely.</li>
-</ul>
+<section id="results-per-gpu-throughput-amd-nvidia-hpc" class="slide level2">
+<h2>Results: Per-GPU throughput (AMD &amp; NVIDIA HPC)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/combinations/event-per-task-gpu-only-frontier-perlmutter-jadearc-bede.png" height="540"></p>
+<figcaption>Per-GPU throughput for AMD &amp; NVIDIA HPC systems (Frontier, Perlmutter, JADE 2.5 &amp; Bede GH200)</figcaption>
+</figure>
 </div>
 </div>
+</section>
+<section id="results-per-node-throughput-2x-3090" class="slide level2">
+<h2>Results: Per-node throughput (2x 3090)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/combinations/event-per-node-frontier-perlmutter-jadearc-bede-waimea.png" height="540"></p>
+<figcaption>Throughput per node including the 6-core i7 + 2x 3090 workstation.<br>This is an unfair comparison</figcaption>
+</figure>
 </div>
 </div>
+</section>
+<section id="results-per-gpu-throughput-2x-3090" class="slide level2">
+<h2>Results: Per-GPU throughput (2x 3090)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/combinations/event-per-task-gpu-only-frontier-perlmutter-jadearc-bede-waimea.png" height="540"></p>
+<figcaption>Per-GPU throughput for GPU runs only</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="results-throughput-per-gpu-w-g4gpu" class="slide level2">
+<h2>Results: Throughput per-GPU w/ G4+GPU</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/combinations/event-per-task-gpu-g4-frontier-perlmutter-jadearc-bede-waimea.png" height="540"></p>
+<figcaption>Per-GPU throughput for GPU and GPU+G4</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="energy-efficiency-partial" class="slide level2">
+<h2>Energy efficiency (partial)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/event-per-energy.png" height="540"></p>
+<figcaption>Energy Efficiency for Frontier, Perlmutter and 2x 3090 workstation. <br>Power consumption extraction not implemented / failed on JADE &amp; Bede</figcaption>
+</figure>
+</div>
+</div>
+<!-- ::: {.callout-important title="Partial power consumption data"}
+
+- `amd-smi` power extraction failed on JADE
+- `nvidia-smi` extraction failed on Bede
+
+::: -->
 </section>
 <section id="todo-whats-next" class="slide level2">
 <h2>Todo / What’s next</h2>
-<div title="@todo">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong><span class="citation" data-cites="todo">@todo</span></strong></p>
-</div>
-<div class="callout-content">
-<p>Finish this slide?</p>
-</div>
-</div>
-</div>
-</div>
 <ul>
-<li>Finish/Fix <code>roc-smi</code> power monitoring</li>
-<li>Re-run on a full 8x MI300x node (in-queue)</li>
-<li>Investigate failures on GH200 and re-run
+<li>Fix power monitoring/extraction on Jade and Bede</li>
+<li>Full-node mi300x run to check for thermal throttling
 <ul>
-<li>Try Celeritas v0.6?</li>
-<li>Update Spack for newer dependency resolution?</li>
+<li>2 GPU run in-flight</li>
+</ul></li>
+<li>Investigate failures on Bede
+<ul>
+<li>OOM, CPU assertions, silent failures</li>
+<li>Check / Update / Pin dependencies</li>
 </ul></li>
 <li>Tidy up into a branch on my fork of <code>regression</code> for future re-runs</li>
+<li>Re-run with Celertias 0.6?</li>
+<li>Try Dual GH200 node when delivered (144GB / GPU)</li>
 </ul>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 divider dark-violet center" data-visibility="uncounted" data-hide-slide-number="true">
