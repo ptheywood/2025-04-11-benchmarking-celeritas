@@ -159,8 +159,8 @@ include-in-header:
 
 - ~22 simulation inputs 
   - 7 geometries
-  - orange vs vecgeom
   - simulation options (msc, field)
+  - orange vs vecgeom
 
 ::: {.text-center .smaller}
 [github.com/celeritas-project/regression](https://github.com/celeritas-project/regression)
@@ -169,9 +169,7 @@ include-in-header:
 :::
 ::::
 
-## celeritas-project/regression
-
-<!-- @todo - better image credit? -->
+## celeritas-project/regression reference plots
 
 ::: {#fig-regression-frontier-perlmutter layout-ncol=2}
 
@@ -180,7 +178,7 @@ include-in-header:
 ![](./img/celeritas-project/regression-v0.5.1-frontier-perlmutter-event-per-energy.png){fig-alt="Regression per-node efficiency using v0.5.1 on Perlmutter & Frontier"}
 
 
-Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & Frontier. <br /> Generated using `update-plots.py` from commit [d5b5c03](https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e)
+Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & Perlmutter. <br /> Generated using `update-plots.py` from commit [d5b5c03](https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e)
 
 :::
 
@@ -200,6 +198,19 @@ Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & 
 
 : {.trbg-nv-amd .table-full-width tbl-colwidths="[19,47,34]"}
 
+
+## Hardware
+
+| Machine                        | CPU per node                    | GPU per node          |
+| :----------------------------- | :------------------------------ | :-------------------- |
+| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
+| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
+| [JADE 2.5][jade-arc-specs]     | 2x AMD EPYC 9534                | 8x AMD MI300x         |
+| [Bede GH200][bede-specs]       | 1x NVIDIA Grace                 | 1x NVIDIA GH200 480GB |
+| 3090 (TUoS)                    | 1x Intel i7-5930k               | 2x NVIDIA RTX 3090    |
+
+: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[19,47,34]" }
+
 ## JADE 2.5 / JADE@ARC
 
 :::: {.columns}
@@ -210,8 +221,8 @@ Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & 
   - Funded by EPSRC
   - Hosted by the University of Oxford
 - 3 Lenovo ThinkSystem SR685a V3 Nodes
-  - 2 AMD EPYC 9534 64-Core CPUs
-  - 8 AMD MI300X GPUs
+  - 2 AMD EPYC 9534 64-Core CPUs @ 280W
+  - 8 AMD MI300X GPUs @ 750W <!-- need rocsmi to check configured power? -->
 - Currently in a beta phase
   - i.e. no "real" users yet
 
@@ -235,8 +246,8 @@ Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & 
   - Hosted by Durham University
   - Extended by N8 partners for 1 year
 - 6x NVIDIA GH200 480GB nodes
-  - 1 NVIDIA Grace 72-core ARM CPU
-  - 1 96GB Hopper GPU
+  - 1 NVIDIA Grace 72-core ARM CPU @ 100W
+  - 1 96GB Hopper GPU @ 900W
   - NVLink-C2C host-device interconnect
 
 :::
@@ -277,28 +288,10 @@ Per-node (a) throughput and (b) efficiency for Celeritas v0.5.1 on Perlmutter & 
 :::
 ::: {.column .text-center width=40%}
 
-
-
-![](img/ptheywood/waimea.jpg){fig-alt="Picture of Waimea during GPU upgrade" width=400}
-
+![](img/ptheywood/waimea.jpg){fig-alt="Picture of 2x 3090 workstation" width=400}
 
 :::
 ::::
-
-## Hardware
-
-| Machine                        | CPU per node                    | GPU per node          |
-| :----------------------------- | :------------------------------ | :-------------------- |
-| [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x         |
-| [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100        |
-| [JADE 2.5][jade-arc-specs]     | 2x AMD EPYC 9534                | 8x AMD MI300x         |
-| [Bede GH200][bede-specs]       | 1x NVIDIA Grace                 | 1x NVIDIA GH200 480GB |
-| 3090 (TUoS)                    | 1x Intel i7-5930k               | 2x NVIDIA RTX 3090    |
-
-: {.trbg-nv-amd .shade-r1-r2 .table-full-width tbl-colwidths="[19,47,34]" }
-
-
-
 
 <!-- # Benchmarking {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 # Benchmarking {.section-header background-image="img/tuos/tuos-core-template-rose.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
@@ -326,7 +319,7 @@ class JadeARC(System):
         "orange": Path("/path/to/celeritas/build-ndebug"),
     }
     name = "jadearc"
-    num_jobs = 1 # 8 MI300X per node
+    num_jobs = 8 # 8 MI300X per node
     gpu_per_job = 1
     cpu_per_job = 16 # 128 core per node
     # ...
@@ -340,21 +333,19 @@ async def main():
 
 :::
 
-## Update post-processing `celeritas-project/regression`
-
-::: {.callout-important appearance="minimal"}
-@todo - Update this when I have the actual plotting script done
-:::
+## Setup `celeritas-project/regression` cont.
 
 :::{style="margin-top: 1rem;"}
 :::: {.columns .smaller}
 ::: {.column width=40%}
 
-```{.python filename="analyze.py" code-line-numbers="1,4-5,6-14"}
+```{.python filename="analyze.py" code-line-numbers="1,4-5,6-16"}
 CPU_POWER_PER_TASK= {
     "frontier": 225 / 8,
     "perlmutter": 280 / 4,
     "jadearc": 280 / 4,
+    "bede": 100 / 1,
+    "waimea": 140 / 2,
 }
 GPU_POWER_PER_TASK = {
   # ...
@@ -370,18 +361,31 @@ TASK_PER_NODE = {
 :::
 ::: {.column width=60%}
 
-```{.python filename="update-plots.py" code-line-numbers="1,4-7,10-11"}
+<style>
+  /* Hide x overflow, we dont' care about the offscreen code. */
+  .reveal pre.sourceCode.no-hscroll code {
+    overflow-x: hidden;
+  }
+</style>
+
+```{.python filename="update-plots.py" code-line-numbers="1,4-7,12-14" .no-hscroll}
 system_color = {
     "frontier": "#BC5544",
     "perlmutter": "#7A954F",
-    "jadearc": "#d95f02",
+    "jadearc": "#E7298A",
+    "bede": "#1B9E77",
+    "waimea": "#666666",
 }
 # ...
 def main():
     analyses["frontier"] = plot_minimal("frontier")
     analyses["perlmutter"] = plot_like = plot_all("perlmutter")
     analyses["jadearc"] = plot_minimal("jadearc")
+    analyses["bede"] = plot_minimal("bede")
+    analyses["waimea"] = plot_minimal("waimea")
     # ...
+
+
 ```
 :::
 ::::
@@ -422,87 +426,150 @@ sbatch run-jadearc.sh
 ::::
 :::
 
-## @todo better title - Partial / Incomplete results
+## Current Limitations
 
-- Celeritas `v0.5.1` using CUDA `12.6` / ROCm `6.2.1`
+:::: {.columns .smaller}
+
+::: {.column width=50%}
+
+- Celeritas `v0.5.1` 
+- CUDA `12.6` 
+- ROCm `6.2.1`
+
+:::
+::: {.column width=50%}
+
+- 2x 3090
+  - No VecGeom results due to Ubuntu/VecGeom link failures
+  - Some CPU runs timedout due to old CPU.
+
+:::
+::::
+
+:::: {.columns .smaller}
+
+::: {.column width=50%}
 
 - JADE 2.5
-  - Single-GPU run only, due to queue time for full node? 
-  - **@todo check this.**
-  - Manually installed dependencies, Spack was unhappy with system provided compilers
+  - Power monitoring not implemented (`amd-smi`)
+  - Single-GPU run with 16 CPU cores only
+  - Manually installed dependencies (spack unhappy)
+
+:::
+::: {.column width=50%}
+
 - Bede GH200
-  - `72` host threads + `1` GPU led to CUDA OOM - reduced to `36`
-  - **Some errors @todo.**
-- 3090
-  - No VecGeom results due to Ubuntu/VecGeom link failures
+  - Power monitoring errors
+  - G4 GPU offload errors with CUDA OOM
+    - 72 CPUs for 1 GPU is not typical
+  - Some G4 failures with OK looking stdout/stderr
+
+:::
+::::
 
 
 <!-- # Results {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 # Results {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
 
-## Results Frontier vs JADE 2.5? @todo
+## Results: Per-node throughput (all)
 
-::: {.callout-important title="@todo"}
+::: {.text-center}
 
-- Figure / table for some results / comparisons, depending on what plotting works nicely.
-
-:::
-
-
-## Results Perlmutter vs GH200? @todo
-
-::: {.callout-important title="@todo"}
-
-- Figure / table for some results / comparisons, depending on what plotting works nicely.
+![All per-node throughput results](img/generated/event-per-node-all.png){height="540"}
 
 :::
 
-## Results Perlmutter vs GH200 vs 3090? @todo
 
-::: {.callout-important title="@todo"}
+## Results: Per-node throughput (AMD)
 
-- Figure / table for some results / comparisons, depending on what plotting works nicely.
+::: {.text-center}
 
-:::
-
-## Results Everything? @todo
-
-::: {.callout-important title="@todo"}
-
-- Figure / table for some results / comparisons, depending on what plotting works nicely.
+![Per-node throughput for AMD systems (Frontier & JADE 2.5)](img/generated/combinations/event-per-node-frontier-jadearc.png){height="540"}
 
 :::
 
-## Results Per GPU? @todo
+## Results: Per-node throughput (NVIDIA HPC)
 
+::: {.text-center}
 
-::: {.callout-important title="@todo"}
+![Per-node throughput for NVIDIA HPC systems (Perlmutter & Bede GH200)](img/generated/combinations/event-per-node-perlmutter-bede.png){height="540"}
 
-- Figure / table for some results / comparisons, depending on what plotting works nicely.
+:::
+
+## Results: Per-GPU throughput (NVIDIA HPC)
+
+::: {.text-center}
+
+![Per-node throughput for NVIDIA HPC systems (Perlmutter & Bede GH200).<br />To account for the difference in GPU count per node (4 vs 1)](img/generated/combinations/event-per-task-gpu-only-perlmutter-bede.png){height="540"}
 
 :::
 
-## Results - Power consumation? @todo
+## Results: Per-node throughput (AMD & NVIDIA HPC)
 
-::: {.callout-important title="@todo"}
+::: {.text-center}
 
-- Figure / table for some results / comparisons, depending on what plotting works nicely.
+![Per-node throughput for AMD & NVIDIA HPC systems (Frontier, Perlmutter, JADE 2.5 & Bede GH200)](img/generated/combinations/event-per-node-frontier-perlmutter-jadearc-bede.png){height="540"}
 
 :::
+
+## Results: Per-GPU throughput (AMD & NVIDIA HPC)
+
+::: {.text-center}
+
+![Per-GPU throughput for AMD & NVIDIA HPC systems (Frontier, Perlmutter, JADE 2.5 & Bede GH200)](img/generated/combinations/event-per-task-gpu-only-frontier-perlmutter-jadearc-bede.png){height="540"}
+
+:::
+
+## Results: Per-node throughput (2x 3090)
+
+::: {.text-center}
+
+![Throughput per node including the 6-core i7 + 2x 3090 workstation.<br />This is an unfair comparison](img/generated/combinations/event-per-node-frontier-perlmutter-jadearc-bede-waimea.png){height="540"}
+
+:::
+
+## Results: Per-GPU throughput (2x 3090)
+
+::: {.text-center}
+
+![Per-GPU throughput for GPU runs only](img/generated/combinations/event-per-task-gpu-only-frontier-perlmutter-jadearc-bede-waimea.png){height="540"}
+
+:::
+
+## Results: Throughput per-GPU w/ G4+GPU
+
+::: {.text-center}
+
+![Per-GPU throughput for GPU and GPU+G4](img/generated/combinations/event-per-task-gpu-g4-frontier-perlmutter-jadearc-bede-waimea.png){height="540"}
+
+:::
+
+## Energy efficiency (partial)
+
+::: {.text-center}
+
+![Energy Efficiency for Frontier, Perlmutter and 2x 3090 workstation. <br/>Power consumption extraction not implemented / failed on JADE & Bede](img/generated/event-per-energy.png){height="540"}
+
+:::
+
+<!-- ::: {.callout-important title="Partial power consumption data"}
+
+- `amd-smi` power extraction failed on JADE
+- `nvidia-smi` extraction failed on Bede
+
+::: -->
 
 ## Todo / What's next 
 
-::: {.callout-important title="@todo"}
-Finish this slide?
-:::
-
-- Finish/Fix `roc-smi` power monitoring
-- Re-run on a full 8x MI300x node (in-queue)
-- Investigate failures on GH200 and re-run
-  - Try Celeritas v0.6?
-  - Update Spack for newer dependency resolution?
+- Fix power monitoring/extraction on Jade and Bede
+- Full-node mi300x run to check for thermal throttling
+  - 2 GPU run in-flight
+- Investigate failures on Bede
+  - OOM, CPU assertions, silent failures
+  - Check / Update / Pin dependencies
 - Tidy up into a branch on my fork of `regression` for future re-runs
-
+- Re-run with Celertias 0.6?
+- Try Dual GH200 node when delivered (144GB / GPU)
 
 # Thank you {.divider .dark-violet visibility="uncounted" data-hide-slide-number='true'}
 
