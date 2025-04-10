@@ -219,7 +219,7 @@ Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & 
 
 ![](img/oxford-arc/JADE_2.5_Logo.svg){fig-alt="JADE@ARC Logo"}
 
-![<span class="fig-credit">Source: https://github.com/oxford-arc/jade-docs/blob/d41e96075db7a8707738349a2db0917094de843c/docs/source/images/AMD-MI300X.png</span>](img/oxford-arc/AMD-MI300X.png)
+![<span class="fig-credit">Source: [jade-arc-docs.readthedocs.io](https://jade-arc-docs.readthedocs.io/index.html)</span>](img/oxford-arc/AMD-MI300X.png)
 
 
 :::
@@ -245,13 +245,13 @@ Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & 
 
 <style type="text/css">
  .reveal img.gh-fig {
-    object-fit:cover; width: 400px; height: 360px;
+    object-fit:cover; width: 360px; height: 360px;
  }
 </style>
 
 ![](img/n8-cir-bede/logo-cmyk.png){fig-alt="N8 CIR Bede Logo"}
 
-![NVIDIA Grace Hopper Superchip.<br/><span class="fig-credit">Source: https://nvidianews.nvidia.com/news/nvidia-grace-hopper-superchips-designed-for-accelerated-generative-ai-enter-full-productionM</span>](img/nvidia/nvidia-gh200-grace-hopper-superchip-platform.png){.gh-fig}
+![NVIDIA Grace Hopper Superchip.<br/><span class="fig-credit">Source: [NVIDIA](https://nvidianews.nvidia.com/news/nvidia-grace-hopper-superchips-designed-for-accelerated-generative-ai-enter-full-production)</span>](img/nvidia/nvidia-gh200-grace-hopper-superchip-platform.png){.gh-fig}
 
 :::
 ::::
