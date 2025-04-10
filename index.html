@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="slides_files/libs/clipboard/clipboard.min.js"></script>
-<script src="slides_files/libs/quarto-html/tabby.min.js"></script>
-<script src="slides_files/libs/quarto-html/popper.min.js"></script>
-<script src="slides_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="slides_files/libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.43">
 
   <meta name="author" content="Peter Heywood, Research Software Engineer">
@@ -15,8 +15,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -95,11 +95,11 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-d988852b5848ae19b74a4450b5ecf04f.css">
-  <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-d988852b5848ae19b74a4450b5ecf04f.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -439,7 +439,7 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas <code>v0
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/oxford-arc/AMD-MI300X.png"></p>
-<figcaption><span class="fig-credit">Source: https://github.com/oxford-arc/jade-docs/blob/d41e96075db7a8707738349a2db0917094de843c/docs/source/images/AMD-MI300X.png</span></figcaption>
+<figcaption><span class="fig-credit">Source: <a href="https://jade-arc-docs.readthedocs.io/index.html">jade-arc-docs.readthedocs.io</a></span></figcaption>
 </figure>
 </div>
 </div></div>
@@ -466,14 +466,14 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas <code>v0
 </div><div class="column text-center" style="width:40%;">
 <style type="text/css">
  .reveal img.gh-fig {
-    object-fit:cover; width: 400px; height: 360px;
+    object-fit:cover; width: 360px; height: 360px;
  }
 </style>
 <p><img data-src="img/n8-cir-bede/logo-cmyk.png" alt="N8 CIR Bede Logo"></p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/nvidia/nvidia-gh200-grace-hopper-superchip-platform.png" class="gh-fig"></p>
-<figcaption>NVIDIA Grace Hopper Superchip.<br><span class="fig-credit">Source: https://nvidianews.nvidia.com/news/nvidia-grace-hopper-superchips-designed-for-accelerated-generative-ai-enter-full-productionM</span></figcaption>
+<figcaption>NVIDIA Grace Hopper Superchip.<br><span class="fig-credit">Source: <a href="https://nvidianews.nvidia.com/news/nvidia-grace-hopper-superchips-designed-for-accelerated-generative-ai-enter-full-production">NVIDIA</a></span></figcaption>
 </figure>
 </div>
 </div></div>
@@ -642,8 +642,8 @@ sbatch run-jadearc.sh
 </div></div>
 </div>
 </section>
-<section id="current-limitations" class="slide level2">
-<h2>Current Limitations</h2>
+<section id="versions-limitations" class="slide level2">
+<h2>Versions &amp; Limitations</h2>
 <div class="columns smaller">
 <div class="column" style="width:50%;">
 <ul>
@@ -666,7 +666,10 @@ sbatch run-jadearc.sh
 <li>JADE 2.5
 <ul>
 <li>Power monitoring not implemented (<code>amd-smi</code>)</li>
-<li>Single-GPU run with 16 CPU cores only</li>
+<li>Single-GPU run with 16 CPU cores only
+<ul>
+<li>Per-node results scaled up x8</li>
+</ul></li>
 <li>Manually installed dependencies (spack unhappy)</li>
 </ul></li>
 </ul>
@@ -677,7 +680,7 @@ sbatch run-jadearc.sh
 <li>Power monitoring errors</li>
 <li>G4 GPU offload errors with CUDA OOM
 <ul>
-<li>72 CPUs for 1 GPU is not typical</li>
+<li>72 CPU cores per GPU is not typical</li>
 </ul></li>
 <li>Some G4 failures with OK looking stdout/stderr</li>
 </ul></li>
@@ -880,19 +883,19 @@ sbatch run-jadearc.sh
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="slides_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="slides_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
