@@ -1,6 +1,6 @@
 project:
   output-dir: _build
   render:
-    - slides.qmd
+    - index.qmd
 execute:
   freeze: auto

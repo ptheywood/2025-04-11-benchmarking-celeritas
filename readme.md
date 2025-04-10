@@ -17,7 +17,7 @@ Slides for talk on 2025-04-11 as part of [GridPP53 & SWIFT-HEP09](https://indico
 # Render project-configured files
 quarto render
 # Render by filename 
-quarto render slides.qmd --to html
+quarto render index.qmd --to html
 ```
 
 ## Print to PDF
@@ -35,7 +35,8 @@ quarto render slides.qmd --to html
 ### Live-preview
 
 ``` bash
-quarto preview slides.qmd
+quarto preview
+quarto preview index.qmd
 ```
 
 ## Hosted via gh-pages
