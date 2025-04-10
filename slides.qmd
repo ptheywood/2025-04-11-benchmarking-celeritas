@@ -467,7 +467,6 @@ sbatch run-jadearc.sh
 :::
 ::::
 
-
 <!-- # Results {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 # Results {.section-header background-image="img/tuos/tuos-core-template-book.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
 
@@ -479,12 +478,11 @@ sbatch run-jadearc.sh
 
 :::
 
-
 ## Results: Per-node throughput (AMD)
 
 ::: {.text-center}
 
-![Per-node throughput for AMD systems (Frontier & JADE 2.5)](img/generated/combinations/event-per-node-frontier-jadearc.png){height="540"}
+![Per-node throughput for AMD systems (Frontier & JADE 2.5)<br />Note: JADE@ARC per-node is estimated from a single GPU run.](img/generated/combinations/event-per-node-frontier-jadearc.png){height="540"}
 
 :::
 
@@ -492,7 +490,7 @@ sbatch run-jadearc.sh
 
 ::: {.text-center}
 
-![Per-node throughput for NVIDIA HPC systems (Perlmutter & Bede GH200)](img/generated/combinations/event-per-node-perlmutter-bede.png){height="540"}
+![Per-node throughput for NVIDIA HPC systems (Perlmutter & Bede GH200).<br/>GH200 node contains a 72-core CPU & 1 GPU](img/generated/combinations/event-per-node-perlmutter-bede.png){height="540"}
 
 :::
 
@@ -500,7 +498,7 @@ sbatch run-jadearc.sh
 
 ::: {.text-center}
 
-![Per-node throughput for NVIDIA HPC systems (Perlmutter & Bede GH200).<br />To account for the difference in GPU count per node (4 vs 1)](img/generated/combinations/event-per-task-gpu-only-perlmutter-bede.png){height="540"}
+![Per-**GPU** throughput for NVIDIA HPC systems (Perlmutter & Bede GH200).<br />GH200 node contains a 72-core CPU & 1 GPU](img/generated/combinations/event-per-task-gpu-only-perlmutter-bede.png){height="540"}
 
 :::
 
@@ -544,20 +542,6 @@ sbatch run-jadearc.sh
 
 :::
 
-## Energy efficiency (partial)
-
-::: {.text-center}
-
-![Energy Efficiency for Frontier, Perlmutter and 2x 3090 workstation. <br/>Power consumption extraction not implemented / failed on JADE & Bede](img/generated/event-per-energy.png){height="540"}
-
-:::
-
-<!-- ::: {.callout-important title="Partial power consumption data"}
-
-- `amd-smi` power extraction failed on JADE
-- `nvidia-smi` extraction failed on Bede
-
-::: -->
 
 ## Todo / What's next 
 
@@ -589,7 +573,31 @@ sbatch run-jadearc.sh
 :::
 ::::
 
-<!-- # Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'} -->
+# Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'}
+
+## Energy efficiency (partial)
+
+::: {.text-center}
+
+![Energy Efficiency for Frontier, Perlmutter and 2x 3090 workstation. <br/>Power consumption extraction not implemented / failed on JADE & Bede](img/generated/event-per-energy.png){height="540"}
+
+:::
+
+<!-- ::: {.callout-important title="Partial power consumption data"}
+
+- `amd-smi` power extraction failed on JADE
+- `nvidia-smi` extraction failed on Bede
+
+::: -->
+
+## Results: Per-node throughput (all)
+
+::: {.text-center}
+
+![All per-node throughput results](img/generated/event-per-node-all.png){height="540"}
+
+:::
+
 
 <!-- Reference links -->
 [perlmutter-specs]: https://docs.nersc.gov/systems/perlmutter/architecture/
