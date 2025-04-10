@@ -95,7 +95,7 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-dae54dd26a009c1dff0c936c3a179750.css">
+  <link rel="stylesheet" href="slides_files/libs/revealjs/dist/theme/quarto-d988852b5848ae19b74a4450b5ecf04f.css">
   <link href="slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -212,19 +212,6 @@
 <section id="celeritas" class="title-slide slide level1 section-header center" data-background-image="img/tuos/tuos-core-template-arrows.png" data-background-size="contain" data-background-position="right" data-background-color="#f3f3f3">
 <h1>Celeritas</h1>
 <!-- # Celeritas {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
-<div style="width: 50%; margin: 0 auto 0 0;">
-<div class="callout callout-important callout-style-simple">
-<div class="callout-body">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-content">
-<p><span class="citation" data-cites="todo">@todo</span> in-slide image attribution</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Only 20 mins. -->
 </section>
 <section id="celeritas-1" class="slide level2">
 <h2>Celeritas</h2>
@@ -345,7 +332,7 @@
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-regression-frontier-perlmutter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas <code>v0.5.1</code> on Frontier &amp; Perlmutter. <br> Generated using <code>update-plots.py</code> from commit <a href="https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e">d5b5c03</a>
+Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas <code>v0.5.1</code> on Frontier &amp; Perlmutter. <br> Generated using <code>update-plots.py</code> from commit <a href="https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e">d5b5c03</a>. <br> Credit: <a href="https://github.com/celeritas-project/regression/graphs/contributors">celeritas-project/regression contributors</a>
 </figcaption>
 </figure>
 </div>
@@ -445,13 +432,16 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas <code>v0
 <li>2 AMD EPYC 9534 64-Core CPUs @ 280W</li>
 <li>8 AMD MI300X GPUs @ 750W <!-- need rocsmi to check configured power? --></li>
 </ul></li>
-<li>Currently in a beta phase
-<ul>
-<li>i.e.&nbsp;no “real” users yet</li>
-</ul></li>
+<li>Currently in early accesss / beta phase <!-- - i.e. no "real" users yet --></li>
 </ul>
 </div><div class="column text-center" style="width:40%;">
-<p><img data-src="img/oxford-arc/JADE_2.5_Logo.svg" alt="JADE@ARC Logo"> <img data-src="img/oxford-arc/AMD-MI300X.png" alt="AMD MI300x system image"></p>
+<p><img data-src="img/oxford-arc/JADE_2.5_Logo.svg" alt="JADE@ARC Logo"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/oxford-arc/AMD-MI300X.png"></p>
+<figcaption><span class="fig-credit">Source: https://github.com/oxford-arc/jade-docs/blob/d41e96075db7a8707738349a2db0917094de843c/docs/source/images/AMD-MI300X.png</span></figcaption>
+</figure>
+</div>
 </div></div>
 </section>
 <section id="bede-gh200-pilot" class="slide level2">
@@ -476,10 +466,16 @@ Figure&nbsp;1: Per-node (a) throughput and (b) efficiency for Celeritas <code>v0
 </div><div class="column text-center" style="width:40%;">
 <style type="text/css">
  .reveal img.gh-fig {
-    object-fit:cover; width: 400px; height: 400px;
+    object-fit:cover; width: 400px; height: 360px;
  }
 </style>
-<p><img data-src="img/n8-cir-bede/logo-cmyk.png" alt="N8 CIR Bede Logo"> <img data-src="img/nvidia/nvidia-gh200-grace-hopper-superchip-platform.png" class="gh-fig" alt="NVIDIA Grace Hopper Superchip"></p>
+<p><img data-src="img/n8-cir-bede/logo-cmyk.png" alt="N8 CIR Bede Logo"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/nvidia/nvidia-gh200-grace-hopper-superchip-platform.png" class="gh-fig"></p>
+<figcaption>NVIDIA Grace Hopper Superchip.<br><span class="fig-credit">Source: https://nvidianews.nvidia.com/news/nvidia-grace-hopper-superchips-designed-for-accelerated-generative-ai-enter-full-productionM</span></figcaption>
+</figure>
+</div>
 </div></div>
 </section>
 <section id="x-3090-workstation" class="slide level2">
@@ -711,7 +707,7 @@ sbatch run-jadearc.sh
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/generated/combinations/event-per-node-frontier-jadearc.png" height="540"></p>
-<figcaption>Per-node throughput for AMD systems (Frontier &amp; JADE 2.5)</figcaption>
+<figcaption>Per-node throughput for AMD systems (Frontier &amp; JADE 2.5)<br>Note: JADE@ARC per-node is estimated from a single GPU run.</figcaption>
 </figure>
 </div>
 </div>
@@ -722,7 +718,7 @@ sbatch run-jadearc.sh
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/generated/combinations/event-per-node-perlmutter-bede.png" height="540"></p>
-<figcaption>Per-node throughput for NVIDIA HPC systems (Perlmutter &amp; Bede GH200)</figcaption>
+<figcaption>Per-node throughput for NVIDIA HPC systems (Perlmutter &amp; Bede GH200).<br>GH200 node contains a 72-core CPU &amp; 1 GPU</figcaption>
 </figure>
 </div>
 </div>
@@ -733,7 +729,7 @@ sbatch run-jadearc.sh
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="img/generated/combinations/event-per-task-gpu-only-perlmutter-bede.png" height="540"></p>
-<figcaption>Per-node throughput for NVIDIA HPC systems (Perlmutter &amp; Bede GH200).<br>To account for the difference in GPU count per node (4 vs 1)</figcaption>
+<figcaption>Per-<strong>GPU</strong> throughput for NVIDIA HPC systems (Perlmutter &amp; Bede GH200).<br>GH200 node contains a 72-core CPU &amp; 1 GPU</figcaption>
 </figure>
 </div>
 </div>
@@ -793,39 +789,19 @@ sbatch run-jadearc.sh
 </div>
 </div>
 </section>
-<section id="energy-efficiency-partial" class="slide level2">
-<h2>Energy efficiency (partial)</h2>
-<div class="text-center">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/generated/event-per-energy.png" height="540"></p>
-<figcaption>Energy Efficiency for Frontier, Perlmutter and 2x 3090 workstation. <br>Power consumption extraction not implemented / failed on JADE &amp; Bede</figcaption>
-</figure>
-</div>
-</div>
-<!-- ::: {.callout-important title="Partial power consumption data"}
-
-- `amd-smi` power extraction failed on JADE
-- `nvidia-smi` extraction failed on Bede
-
-::: -->
-</section>
 <section id="todo-whats-next" class="slide level2">
 <h2>Todo / What’s next</h2>
 <ul>
 <li>Fix power monitoring/extraction on Jade and Bede</li>
-<li>Full-node mi300x run to check for thermal throttling
+<li>Full-node mi300x run to check for thermal throttling</li>
+<li>Investigate failures on Bede/GH200
 <ul>
-<li>2 GPU run in-flight</li>
-</ul></li>
-<li>Investigate failures on Bede
-<ul>
-<li>OOM, CPU assertions, silent failures</li>
-<li>Check / Update / Pin dependencies</li>
+<li>OOM, CPU assertions, silent G4 failures</li>
+<li>Check / update / pin dependencies</li>
 </ul></li>
 <li>Tidy up into a branch on my fork of <code>regression</code> for future re-runs</li>
 <li>Re-run with Celertias 0.6?</li>
-<li>Try Dual GH200 node when delivered (144GB / GPU)</li>
+<li>Try Dual 144GB GH200 node when delivered to Bede</li>
 </ul>
 </section></section>
 <section id="thank-you" class="title-slide slide level1 divider dark-violet center" data-visibility="uncounted" data-hide-slide-number="true">
@@ -858,10 +834,43 @@ sbatch run-jadearc.sh
 </div>
 </div>
 </div></div>
-<!-- # Additional Slides {.divider .electric-violet visibility="uncounted" data-hide-slide-number='true'} -->
-<!-- Reference links -->
+</section>
+
+<section>
+<section id="additional-slides" class="title-slide slide level1 divider electric-violet center" data-visibility="uncounted" data-hide-slide-number="true">
+<h1>Additional Slides</h1>
 
 </section>
+<section id="energy-efficiency-partial" class="slide level2">
+<h2>Energy efficiency (partial)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/event-per-energy.png" height="540"></p>
+<figcaption>Energy Efficiency for Frontier, Perlmutter and 2x 3090 workstation. <br>Power consumption extraction not implemented / failed on JADE &amp; Bede</figcaption>
+</figure>
+</div>
+</div>
+<!-- ::: {.callout-important title="Partial power consumption data"}
+
+- `amd-smi` power extraction failed on JADE
+- `nvidia-smi` extraction failed on Bede
+
+::: -->
+</section>
+<section id="results-per-node-throughput-all-1" class="slide level2">
+<h2>Results: Per-node throughput (all)</h2>
+<div class="text-center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/generated/event-per-node-all.png" height="540"></p>
+<figcaption>All per-node throughput results</figcaption>
+</figure>
+</div>
+</div>
+<!-- Reference links -->
+
+</section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="./img/tuos/UOSLogo_Primary_Violet_RGB.svg" class="slide-logo"></p>
