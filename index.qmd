@@ -526,15 +526,6 @@ sbatch run-jadearc.sh
 
 :::
 
-## Results: Throughput per-GPU w/ G4+GPU
-
-::: {.text-center}
-
-![Per-GPU throughput for GPU and GPU+G4](img/generated/combinations/event-per-task-gpu-g4-frontier-perlmutter-jadearc-bede-waimea.png){height="540"}
-
-:::
-
-
 ## Todo / What's next 
 
 - Fix power monitoring/extraction on Jade and Bede
@@ -589,6 +580,13 @@ sbatch run-jadearc.sh
 
 :::
 
+## Results: Throughput per-GPU w/ G4+GPU
+
+::: {.text-center}
+
+![Per-GPU throughput for GPU and GPU+G4](img/generated/combinations/event-per-task-gpu-g4-frontier-perlmutter-jadearc-bede-waimea.png){height="540"}
+
+:::
 
 <!-- Reference links -->
 [perlmutter-specs]: https://docs.nersc.gov/systems/perlmutter/architecture/
