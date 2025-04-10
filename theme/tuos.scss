@@ -511,7 +511,7 @@ $callout-color-caution: $tuos-peach;
     /* shade out 2 rows of the table when requested */
     table.shade-r1-r2 tbody tr:first-child,
     table.shade-r1-r2 tbody tr:nth-child(2) {
-        opacity: 0.3;
+        opacity: 0.6;
     }
 }
 .reveal.has-dark-background .footer {

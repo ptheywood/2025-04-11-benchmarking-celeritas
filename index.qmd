@@ -11,7 +11,7 @@ footer: "Benchmarking Celeritas - [GridPP53 & SWIFT-HEP09](https://indico.cern.c
 format:
   revealjs:
     theme: theme/tuos.scss
-    embed-resources: false  # only enable when publish-ready for perf reasons
+    embed-resources: true  # only enable when publish-ready for perf reasons
     template-partials:
       - title-slide.html
     # show-notes: separate-page
@@ -178,14 +178,14 @@ Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & 
 <!-- # Hardware {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 # Hardware {.section-header background-image="img/tuos/tuos-core-template-crown.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
 
-## Hardware (Upstream)
+<!-- ## Hardware (Upstream)
 
 | Machine                        | CPU per node                    | GPU per node   |
 | :----------------------------- | :------------------------------ | :------------- |
 | [Frontier][frontier-specs]     | 1x AMD “Optimized 3rd Gen EPYC” | 8x AMD MI250x  |
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
 
-: {.trbg-nv-amd .table-full-width tbl-colwidths="[19,47,34]"}
+: {.trbg-nv-amd .table-full-width tbl-colwidths="[19,47,34]"} -->
 
 ## Hardware
 
