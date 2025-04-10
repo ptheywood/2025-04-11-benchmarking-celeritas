@@ -55,13 +55,6 @@ include-in-header:
 # Celeritas {.section-header background-image="img/tuos/tuos-core-template-arrows.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
 <!-- # Celeritas {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 
-::: {.callout-important appearance="simple" style="width: 50%; margin: 0 auto 0 0;"}
-@todo in-slide image attribution
-:::
-
-
-<!-- Only 20 mins. -->
-
 ## Celeritas
 
 :::: {.columns .smaller}
@@ -178,16 +171,12 @@ include-in-header:
 ![](./img/celeritas-project/regression-v0.5.1-frontier-perlmutter-event-per-energy.png){fig-alt="Regression per-node efficiency using v0.5.1 on Perlmutter & Frontier"}
 
 
-Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & Perlmutter. <br /> Generated using `update-plots.py` from commit [d5b5c03](https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e)
+Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & Perlmutter. <br /> Generated using `update-plots.py` from commit [d5b5c03](https://github.com/celeritas-project/regression/tree/d5b5c03773dc47756bc09368ed3b0056e689b12e). <br /> Credit: [celeritas-project/regression contributors](https://github.com/celeritas-project/regression/graphs/contributors)
 
 :::
 
-
-
 <!-- # Hardware {.divider .pale-violet visibility="uncounted" data-hide-slide-number='true'} -->
 # Hardware {.section-header background-image="img/tuos/tuos-core-template-crown.png" background-size="contain" background-position="right" background-color="#f3f3f3"}
-
-
 
 ## Hardware (Upstream)
 
@@ -197,7 +186,6 @@ Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & 
 | [Perlmutter][perlmutter-specs] | 1x AMD EPYC 7763                | 4x NVIDIA A100 |
 
 : {.trbg-nv-amd .table-full-width tbl-colwidths="[19,47,34]"}
-
 
 ## Hardware
 
@@ -223,14 +211,16 @@ Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & 
 - 3 Lenovo ThinkSystem SR685a V3 Nodes
   - 2 AMD EPYC 9534 64-Core CPUs @ 280W
   - 8 AMD MI300X GPUs @ 750W <!-- need rocsmi to check configured power? -->
-- Currently in a beta phase
-  - i.e. no "real" users yet
+- Currently in early accesss / beta phase
+  <!-- - i.e. no "real" users yet -->
 
 :::
 ::: {.column .text-center width=40%}
 
 ![](img/oxford-arc/JADE_2.5_Logo.svg){fig-alt="JADE@ARC Logo"}
-![](img/oxford-arc/AMD-MI300X.png){fig-alt="AMD MI300x system image"}
+
+![<span class="fig-credit">Source: https://github.com/oxford-arc/jade-docs/blob/d41e96075db7a8707738349a2db0917094de843c/docs/source/images/AMD-MI300X.png</span>](img/oxford-arc/AMD-MI300X.png)
+
 
 :::
 ::::
@@ -255,12 +245,13 @@ Per-node (a) throughput and (b) efficiency for Celeritas `v0.5.1` on Frontier & 
 
 <style type="text/css">
  .reveal img.gh-fig {
-    object-fit:cover; width: 400px; height: 400px;
+    object-fit:cover; width: 400px; height: 360px;
  }
 </style>
 
 ![](img/n8-cir-bede/logo-cmyk.png){fig-alt="N8 CIR Bede Logo"}
-![NVIDIA Grace Hopper Superchip](img/nvidia/nvidia-gh200-grace-hopper-superchip-platform.png){.gh-fig}
+
+![NVIDIA Grace Hopper Superchip.<br/><span class="fig-credit">Source: https://nvidianews.nvidia.com/news/nvidia-grace-hopper-superchips-designed-for-accelerated-generative-ai-enter-full-productionM</span>](img/nvidia/nvidia-gh200-grace-hopper-superchip-platform.png){.gh-fig}
 
 :::
 ::::
@@ -547,13 +538,12 @@ sbatch run-jadearc.sh
 
 - Fix power monitoring/extraction on Jade and Bede
 - Full-node mi300x run to check for thermal throttling
-  - 2 GPU run in-flight
-- Investigate failures on Bede
-  - OOM, CPU assertions, silent failures
-  - Check / Update / Pin dependencies
+- Investigate failures on Bede/GH200
+  - OOM, CPU assertions, silent G4 failures
+  - Check / update / pin dependencies
 - Tidy up into a branch on my fork of `regression` for future re-runs
 - Re-run with Celertias 0.6?
-- Try Dual GH200 node when delivered (144GB / GPU)
+- Try Dual 144GB GH200 node when delivered to Bede
 
 # Thank you {.divider .dark-violet visibility="uncounted" data-hide-slide-number='true'}
 
