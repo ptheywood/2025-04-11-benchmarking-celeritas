@@ -417,7 +417,7 @@ sbatch run-jadearc.sh
 ::::
 :::
 
-## Current Limitations
+## Versions & Limitations
 
 :::: {.columns .smaller}
 
@@ -444,6 +444,7 @@ sbatch run-jadearc.sh
 - JADE 2.5
   - Power monitoring not implemented (`amd-smi`)
   - Single-GPU run with 16 CPU cores only
+    - Per-node results scaled up x8
   - Manually installed dependencies (spack unhappy)
 
 :::
@@ -452,7 +453,7 @@ sbatch run-jadearc.sh
 - Bede GH200
   - Power monitoring errors
   - G4 GPU offload errors with CUDA OOM
-    - 72 CPUs for 1 GPU is not typical
+    - 72 CPU cores per GPU is not typical
   - Some G4 failures with OK looking stdout/stderr
 
 :::
